@@ -6,6 +6,7 @@ import torch
 from torch.utils.data import DataLoader
 
 from snn_shd import config
+from snn_shd.utils import get_data_paths
 
 
 class SHDDataset(torch.utils.data.Dataset):
@@ -62,8 +63,7 @@ class SHDDataset(torch.utils.data.Dataset):
 
 
 def create_dataloaders(
-    train_path: Path,
-    test_path: Path,
+    data_path: Path,
     device: torch.device,
     duration: float = config.DURATION,
     n_steps: int = config.N_STEPS,
@@ -75,8 +75,7 @@ def create_dataloaders(
     Creates training and testing DataLoaders for the SHD dataset.
 
     Args:
-      train_path: Path to the SHD training .h5 file.
-      test_path: Path to the SHD testing .h5 file.
+      data_path: Path to the SHD data directory.
       device: Target device; used to decide whether to pin memory.
       duration: Simulation duration in seconds.
       n_steps: Number of discrete time steps to bin spikes into.
@@ -89,6 +88,7 @@ def create_dataloaders(
     """
     pin_memory = device.type == "cuda"
 
+    train_path, test_path = get_data_paths(data_path)
     train_data = SHDDataset(
         data_path=train_path, duration=duration, n_steps=n_steps, n_neurons=n_neurons
     )

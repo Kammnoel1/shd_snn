@@ -1,7 +1,8 @@
 from pathlib import Path
+
 import torch
-import data_setup, engine, feedforward_simple, utils
-from snn_shd import config
+
+from snn_shd import config, data_setup, engine, feedforward_simple, utils
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
