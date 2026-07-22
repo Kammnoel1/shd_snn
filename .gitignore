@@ -1,0 +1,9 @@
+# ignore virtual environment
+.snn/
+# ignore VS Code settingss 
+.vscode/
+# ignore testing scripts for now
+testing/ 
+# ignore notebooks for now 
+notebooks/
+
