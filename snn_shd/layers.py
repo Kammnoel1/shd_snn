@@ -15,8 +15,11 @@ class CramerSynaptic(Synaptic):
         base_fn_mem = (
             self.beta.clamp(0, 1) * self.mem + (1 - self.beta.clamp(0, 1)) * self.syn
         )
-        base_fn_syn = self.alpha.clamp(0, 1) * self.syn + input_
-        return 0, base_fn_mem
+        base_fn_syn = torch.zeros_like(
+            self.syn
+        )  # comapre to source code : base_fn_syn = self.alpha.clamp(0, 1) * self.syn + input_
+
+        return base_fn_syn, base_fn_mem
 
     def _base_zero(self, input_):
         syn, mem = self._base_state_function(input_)
@@ -27,14 +30,15 @@ class CramerSynaptic(Synaptic):
         return syn, mem
 
     def forward(self, input_, syn=None, mem=None):
-
-        if not syn == None:
+        if syn is not None:  # compare to source code: if not syn == None:
             self.syn = syn
 
-        if not mem == None:
+        if mem is not None:  # compare to source code: if not mem == None:
             self.mem = mem
 
-        if self.init_hidden and (not mem == None or not syn == None):
+        if self.init_hidden and (
+            mem is not None or syn is not None
+        ):  # compare to source code: if self.init_hidden and (not mem == None or not syn == None)
             raise TypeError(
                 "`mem` or `syn` should not be passed as an argument while `init_hidden=True`"
             )
