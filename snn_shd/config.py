@@ -1,19 +1,24 @@
+import os
+from pathlib import Path
+
 import torch
 
-N_INPUT = 700  # Cochlea preprocessing
-N_OUTPUT = 20  # number of output classes
-N_HIDDEN = 128
-DATA_DICT = "/Users/noelkamm/data/hdspikes"  # path to training set
+IN_NEURONS = 700  # Cochlea preprocessing
+OUT_NEURONS = 20  # number of output classes
+HIDDEN_UNITS = 128  # number of hidden neurons
+DATA_DICT = Path(
+    "/Users/noelkamm/data/hdspikes"
+)  # Path object pointing to the directory where training and test set are stored
 # model parameters from Table II of SHD paper
 tau_syn = 10 / 1000  # synapse time constant in s
 tau_mem = 20 / 1000  # membrane time constant in s
 time_step = 0.5 / 1000  # simulation time step size in s
-duration = 1  # simulation duration in s
+DURATION = 1.0  # simulation duration in s
 KAPPA = torch.exp(torch.tensor(-time_step / tau_syn))  # synaptic current decay factor
 LAMBDA_ = torch.exp(
     torch.tensor(-time_step / tau_mem)
 )  # membrane potential decay factor
-N_STEPS = int(duration / time_step)  # number of time steps
+N_STEPS = int(DURATION / time_step)  # number of time steps
 U_THRES = 1
 BATCH_SIZE = 256
 LEARNING_RATE = 0.001  # learning rate
@@ -25,3 +30,4 @@ L2_STRENGTH = 0.06  # scales L2 regularizer
 BETA_1 = 0.9  # first moment for Adamax
 BETA_2 = 0.999  # second moment for Adamax
 N_EPOCHS = 150  # number of training epochs
+N_WORKERS = os.cpu_count()

@@ -32,10 +32,10 @@ class FeedforwardSNN(nn.Module):
         mem2 = self.lif2.reset_mem()
 
         mem2_trace = torch.zeros(
-            config.N_STEPS, batch_size, config.N_OUTPUT, device=device
+            config.N_STEPS, batch_size, config.OUT_NEURONS, device=device
         )
         spk1_trace = torch.zeros(
-            config.N_STEPS, batch_size, config.N_HIDDEN, device=device
+            config.N_STEPS, batch_size, config.HIDDEN_UNITS, device=device
         )
         for t in range(config.N_STEPS):
             cur1 = self.fc1(x[:, t, :])
