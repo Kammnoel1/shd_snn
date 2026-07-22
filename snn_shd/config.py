@@ -6,9 +6,11 @@ import torch
 IN_NEURONS = 700  # Cochlea preprocessing
 OUT_NEURONS = 20  # number of output classes
 HIDDEN_UNITS = 128  # number of hidden neurons
-DATA_DICT = Path(
+DATA_DIR = Path(
     "/Users/noelkamm/data/hdspikes"
 )  # Path object pointing to the directory where training and test set are stored
+TRAIN_DATA = "shd_train.h5"
+TEST_DATA = "shd_test.h5"
 # model parameters from Table II of SHD paper
 tau_syn = 10 / 1000  # synapse time constant in s
 tau_mem = 20 / 1000  # membrane time constant in s
@@ -18,7 +20,7 @@ KAPPA = torch.exp(torch.tensor(-time_step / tau_syn))  # synaptic current decay 
 LAMBDA_ = torch.exp(
     torch.tensor(-time_step / tau_mem)
 )  # membrane potential decay factor
-N_STEPS = int(DURATION / time_step)  # number of time steps
+NUM_STEPS = int(DURATION / time_step)  # number of time steps
 U_THRES = 1
 BATCH_SIZE = 256
 LEARNING_RATE = 0.001  # learning rate
@@ -29,5 +31,6 @@ L2_THRES = 100  # L2 threshold: average spike count per neuron
 L2_STRENGTH = 0.06  # scales L2 regularizer
 BETA_1 = 0.9  # first moment for Adamax
 BETA_2 = 0.999  # second moment for Adamax
-N_EPOCHS = 150  # number of training epochs
-N_WORKERS = os.cpu_count()
+NUM_EPOCHS = 150  # number of training epochs
+NUM_WORKERS = os.cpu_count()
+MODEL_NAME = "simple_feedforwardSNN_v_0"  # Name of saved model

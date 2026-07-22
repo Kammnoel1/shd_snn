@@ -1,20 +1,12 @@
-from pathlib import Path
-
 import torch
 
 from snn_shd import config, data_setup, engine, feedforward_simple, utils
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-train_dir = config.DATA_DICT / "train"
-test_dir = config.DATA_DICT / "test"
-
-
 train_dataloader, test_dataloader, class_names = data_setup.create_dataloaders(
-    train_dir=train_dir,
-    test_dir=test_dir,
-    transform=None,
-    batch_size=config.BATCH_SIZE,
+    data_path=config.DATA_DIR,
+    device=device,
 )
 
 
@@ -36,5 +28,5 @@ engine.train(
 utils.save_model(
     model=model,
     target_dir="models",
-    model_name="05_going_modular_script_mode_tinyvgg_model.pth",
+    model_name=config.MODEL_NAME,
 )
