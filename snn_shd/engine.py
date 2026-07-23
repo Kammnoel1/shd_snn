@@ -1,3 +1,4 @@
+import sys
 from collections.abc import Callable
 
 import torch
@@ -35,12 +36,16 @@ def train_one_epoch(
         total_loss.backward()
         optimizer.step()
 
+        class_preds = mem2_trace.max(dim=0).values.argmax(dim=1)
+        train_acc = (class_preds == y).float().mean().item()
+
         tracker.update(
             batch_size=X.shape[0],
             train_total=total_loss.item(),
             train_ce=ce_loss.item(),
             train_l1=l1_loss.item(),
             train_l2=l2_loss.item(),
+            train_acc=train_acc,
         )
 
     return tracker.get_running_avg()
@@ -62,12 +67,17 @@ def evaluate(
             mem2_trace, spk1_trace = model(X)
             ce_loss, l1_loss, l2_loss = loss_fn(mem2_trace, spk1_trace, labels=y)
             total_loss = ce_loss + l1_loss + l2_loss
+
+            class_preds = mem2_trace.max(dim=0).values.argmax(dim=1)
+            test_acc = (class_preds == y).float().mean().item()
+
             tracker.update(
                 batch_size=X.shape[0],
                 test_total=total_loss.item(),
                 test_ce=ce_loss.item(),
                 test_l1=l1_loss.item(),
                 test_l2=l2_loss.item(),
+                test_acc=test_acc,
             )
 
     return tracker.get_running_avg()
@@ -103,7 +113,7 @@ def train(
     model = model.to(device)
     results: dict[str, list] = {}
 
-    for epoch in tqdm(range(epochs)):
+    for epoch in tqdm(range(epochs), disable=not sys.stdout.isatty()):
         train_results = train_one_epoch(
             model=model,
             dataloader=train_dataloader,

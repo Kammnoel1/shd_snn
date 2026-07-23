@@ -1,13 +1,17 @@
 import os
+from pathlib import Path
 
 import torch
 
 IN_NEURONS = 700  # Cochlea preprocessing
 OUT_NEURONS = 20  # number of output classes
 HIDDEN_UNITS = 128  # number of hidden neurons
-DATA_DIR = "/Users/noelkamm/data/hdspikes"  # Path object pointing to the directory where training and test set are stored
-TRAIN_DATA = "shd_train.h5"
-TEST_DATA = "shd_test.h5"
+SHD_DATA_DIR = "/p/project/<your_project>/hdspikes"  # path on the computing cluster
+DATA_DIR = Path(
+    os.environ.get("SHD_DATA_DIR", "/Users/noelkamm/data/hdspikes")
+)  # Path object pointing to the directory where training and test set are stored
+TRAIN_FILENAME = "shd_train.h5"
+TEST_FILENAME = "shd_test.h5"
 # model parameters from Table II of SHD paper
 tau_syn = 10 / 1000  # synapse time constant in s
 tau_mem = 20 / 1000  # membrane time constant in s
@@ -31,6 +35,4 @@ BETA_2 = 0.999  # second moment for Adamax
 NUM_EPOCHS = 3  # number of training epochs
 NUM_WORKERS = 0
 MODEL_NAME = "simple_feedforwardSNN_v_0.pt"  # Name of saved model
-TRAIN_FILENAME = "shd_train.h5"
-TEST_FILENAME = "shd_test.h5"
 TEST_RUN = True

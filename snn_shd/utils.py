@@ -1,4 +1,3 @@
-import os
 from datetime import datetime
 from pathlib import Path
 
@@ -55,7 +54,7 @@ def save_model(model: torch.nn.Module, target_dir: str, model_name: str):
 
 
 def get_data_paths(
-    dir_path: str = config.DATA_DIR,
+    dir_path: Path = config.DATA_DIR,
     train_filename: str = config.TRAIN_FILENAME,
     test_filename: str = config.TEST_FILENAME,
 ) -> tuple[Path, Path]:
@@ -172,11 +171,15 @@ def write_results(
         )
 
 
-# def print_epoch_stats(epoch, train_losses, test_losses):
-#     print(
-#         f"Epoch: {epoch+1} | "
-#         f"train_loss: {train_total:.4f} | "
-#         f"train_acc: {train_ce:.4f} | "
-#         f"test_loss: {train_l1:.4f} | "
-#         f"test_acc: {train_l2:.4f}"
-#     )
+def print_epoch_stats(epoch: int, train_results: dict, test_results: dict) -> None:
+    """
+    Prints a single-line summary of this epoch's train/test metrics.
+
+    Args:
+      epoch: Current epoch (0-indexed).
+      train_results: Dict of training metrics from MetricTracker.get_running_avg().
+      test_results: Dict of testing metrics from MetricTracker.get_running_avg().
+    """
+    metrics = {**train_results, **test_results}
+    summary = " | ".join(f"{name}: {value:.4f}" for name, value in metrics.items())
+    print(f"Epoch: {epoch + 1} | {summary}")

@@ -74,7 +74,7 @@ def create_dataloaders(
     num_neurons: int = config.IN_NEURONS,
     batch_size: int = config.BATCH_SIZE,
     num_workers: int = config.NUM_WORKERS,
-    test: bool = config.TEST_RUN,
+    debug_subset: bool = config.TEST_RUN,
 ) -> tuple[DataLoader, DataLoader]:
     """
     Creates training and testing DataLoaders for the SHD dataset.
@@ -106,37 +106,23 @@ def create_dataloaders(
         num_steps=num_steps,
         num_neurons=num_neurons,
     )
-    if test:
-        subset_train, _ = random_split(train_data, [0.05, 0.95])
-        subset_test, _ = random_split(test_data, [0.05, 0.95])
-        train_dataloader = DataLoader(
-            subset_train,
-            batch_size=batch_size,
-            shuffle=True,
-            num_workers=num_workers,
-            pin_memory=pin_memory,
-        )
-        test_dataloader = DataLoader(
-            subset_test,
-            batch_size=batch_size,
-            shuffle=False,  # don't need to shuffle test data
-            num_workers=num_workers,
-            pin_memory=pin_memory,
-        )
-    else:
-        train_dataloader = DataLoader(
-            train_data,
-            batch_size=batch_size,
-            shuffle=True,
-            num_workers=num_workers,
-            pin_memory=pin_memory,
-        )
-        test_dataloader = DataLoader(
-            test_data,
-            batch_size=batch_size,
-            shuffle=False,  # don't need to shuffle test data
-            num_workers=num_workers,
-            pin_memory=pin_memory,
-        )
+    if debug_subset:
+        train_data, _ = random_split(train_data, [0.05, 0.95])
+        test_data, _ = random_split(test_data, [0.05, 0.95])
+
+    train_dataloader = DataLoader(
+        train_data,
+        batch_size=batch_size,
+        shuffle=True,
+        num_workers=num_workers,
+        pin_memory=pin_memory,
+    )
+    test_dataloader = DataLoader(
+        test_data,
+        batch_size=batch_size,
+        shuffle=False,
+        num_workers=num_workers,
+        pin_memory=pin_memory,
+    )
 
     return train_dataloader, test_dataloader
