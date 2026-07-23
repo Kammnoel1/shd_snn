@@ -6,10 +6,7 @@ import torch
 IN_NEURONS = 700  # Cochlea preprocessing
 OUT_NEURONS = 20  # number of output classes
 HIDDEN_UNITS = 128  # number of hidden neurons
-SHD_DATA_DIR = "/p/project/<your_project>/hdspikes"  # path on the computing cluster
-DATA_DIR = Path(
-    os.environ.get("SHD_DATA_DIR", "/Users/noelkamm/data/hdspikes")
-)  # Path object pointing to the directory where training and test set are stored
+DATA_DIR = Path("/p/project1/ebrains-0000010/hdspikes")  # Path object pointing to the directory where training and test set are stored
 TRAIN_FILENAME = "shd_train.h5"
 TEST_FILENAME = "shd_test.h5"
 # model parameters from Table II of SHD paper
