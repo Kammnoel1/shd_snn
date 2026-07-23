@@ -1,97 +1,128 @@
+from collections.abc import Callable
+
 import torch
+from torch.optim import Optimizer
+from torch.utils.data import DataLoader
+from torch.utils.tensorboard.writer import SummaryWriter
 from tqdm.auto import tqdm
-from typing import Dict, List, Tuple
-from snn_shd.losses import max_over_time_loss, regularization_loss
+
+from snn_shd.utils import MetricTracker, write_results
 
 
-def train_one_epoch(model, optimizer, train_loader, device):
-    """
-    Needs to be implemented. Cf.: https://github.com/pytorch/vision/blob/main/references/classification/train.py.
-    """
-    # model = model.to(device)
+def train_one_epoch(
+    model: torch.nn.Module,
+    dataloader: DataLoader,
+    loss_fn: Callable,
+    optimizer: Optimizer,
+    device: torch.device,
+):
+    """ """
+    model = model.to(device)
 
-    #     epoch_start = time.perf_counter()
-    #     model.train()
-    #     epoch_ce, epoch_l1, epoch_l2 = 0.0, 0.0, 0.0
-    #     n_samples = 0
+    model.train()
 
-    #     for x, y in train_loader:
-    #         x, y = x.to(device), y.to(device)
+    tracker = MetricTracker()
 
-    #         mem2_trace, spk1_trace = model(x)
+    for X, y in dataloader:
+        X, y = X.to(device), y.to(device)
 
-    #         L_ce = max_over_time_loss(mem2_trace, y)
-    #         L1, L2 = regularization_loss(spk1_trace)
-    #         loss = L_ce + L1 + L2
+        mem2_trace, spk1_trace = model(X)
 
-    #         optimizer.zero_grad()
-    #         loss.backward()
-    #         optimizer.step()
+        ce_loss, l1_loss, l2_loss = loss_fn(mem2_trace, spk1_trace, labels=y)
 
-    #         epoch_ce += L_ce.item() * x.shape[0]
-    #         epoch_l1 += L1.item() * x.shape[0]
-    #         epoch_l2 += L2.item() * x.shape[0]
-    #         n_samples += x.shape[0]
-    #     epoch_time = time.perf_counter() - epoch_start
-    #     print(
-    #         f"Epoch {epoch+1:3d}/{N_EPOCHS} | "
-    #         f"CE: {epoch_ce/n_samples:.4f} | "
-    #         f"L1: {epoch_l1/n_samples:.4f} | "
-    #         f"L2: {epoch_l2/n_samples:.4f} | "
-    #         f"Time: {epoch_time:.2f}"
-    #     )
+        total_loss = ce_loss + l1_loss + l2_loss
+
+        optimizer.zero_grad()
+        total_loss.backward()
+        optimizer.step()
+
+        tracker.update(
+            batch_size=X.shape[0],
+            train_total=total_loss.item(),
+            train_ce=ce_loss.item(),
+            train_l1=l1_loss.item(),
+            train_l2=l2_loss.item(),
+        )
+
+    return tracker.get_running_avg()
 
 
-def evaluate():
-    pass
+def evaluate(
+    model: torch.nn.Module,
+    dataloader: DataLoader,
+    loss_fn: Callable,
+    device: torch.device,
+):
+    """"""
+    model.eval()
+    tracker = MetricTracker()
+
+    with torch.inference_mode():
+        for X, y in dataloader:
+            X, y = X.to(device), y.to(device)
+            mem2_trace, spk1_trace = model(X)
+            ce_loss, l1_loss, l2_loss = loss_fn(mem2_trace, spk1_trace, labels=y)
+            total_loss = ce_loss + l1_loss + l2_loss
+            tracker.update(
+                batch_size=X.shape[0],
+                test_total=total_loss.item(),
+                test_ce=ce_loss.item(),
+                test_l1=l1_loss.item(),
+                test_l2=l2_loss.item(),
+            )
+
+    return tracker.get_running_avg()
 
 
 def train(
     model: torch.nn.Module,
-    train_dataloader: torch.utils.data.DataLoader,
-    test_dataloader: torch.utils.data.DataLoader,
-    optimizer: torch.optim.Optimizer,
-    loss_fn: torch.nn.Module,
+    train_dataloader: DataLoader,
+    test_dataloader: DataLoader,
+    loss_fn: Callable,
+    optimizer: Optimizer,
     epochs: int,
     device: torch.device,
-) -> Dict[str, List]:
+    writer: SummaryWriter | None = None,
+) -> dict[str, list]:
     """
-    Needs to be implemented. Add tensorboard SummaryWriter() for experiment tracking.
+    Trains and evaluates a model for a number of epochs, logging metrics.
+
+    Args:
+      model: The PyTorch model to train and evaluate.
+      train_dataloader: DataLoader for the training set.
+      test_dataloader: DataLoader for the test set.
+      loss_fn: Callable returning (ce_loss, l1_loss, l2_loss).
+      optimizer: Optimizer used to update model parameters.
+      epochs: Number of epochs to train for.
+      device: Target device to compute on.
+      writer: SummaryWriter for TensorBoard logging, or None to disable logging.
+
+    Returns:
+      A dict mapping each metric name (e.g. "train_ce", "test_l1") to a
+      list of its value at each epoch.
     """
+    model = model.to(device)
+    results: dict[str, list] = {}
 
+    for epoch in tqdm(range(epochs)):
+        train_results = train_one_epoch(
+            model=model,
+            dataloader=train_dataloader,
+            loss_fn=loss_fn,
+            optimizer=optimizer,
+            device=device,
+        )
+        test_results = evaluate(
+            model=model, dataloader=test_dataloader, loss_fn=loss_fn, device=device
+        )
 
-#   results = {"train_loss": [],
-#       "train_acc": [],
-#       "test_loss": [],
-#       "test_acc": []
-#   }
+        for name, value in {**train_results, **test_results}.items():
+            results.setdefault(name, []).append(value)
 
-#   # Loop through training and testing steps for a number of epochs
-#   for epoch in tqdm(range(epochs)):
-#       train_loss, train_acc = train_one_epoch(model=model,
-#                                           dataloader=train_dataloader,
-#                                           loss_fn=loss_fn,
-#                                           optimizer=optimizer,
-#                                           device=device)
-#       test_loss, test_acc = test_step(model=model,
-#           dataloader=test_dataloader,
-#           loss_fn=loss_fn,
-#           device=device)
+        if writer is not None:
+            write_results(writer, train_results, test_results, epoch)
 
-#       # Print out what's happening
-#       print(
-#           f"Epoch: {epoch+1} | "
-#           f"train_loss: {train_loss:.4f} | "
-#           f"train_acc: {train_acc:.4f} | "
-#           f"test_loss: {test_loss:.4f} | "
-#           f"test_acc: {test_acc:.4f}"
-#       )
+    if writer is not None:
+        writer.close()
 
-#       # Update results dictionary
-#       results["train_loss"].append(train_loss)
-#       results["train_acc"].append(train_acc)
-#       results["test_loss"].append(test_loss)
-#       results["test_acc"].append(test_acc)
-
-#   # Return the filled results at the end of the epochs
-#   return results
+    return results

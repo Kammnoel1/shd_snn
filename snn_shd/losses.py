@@ -4,7 +4,7 @@ import torch.nn.functional as F
 from snn_shd import config
 
 
-def max_over_time_loss(mem2_trace: torch.Tensor, labels: torch.Tensor) -> torch.Tensor:
+def over_time_loss(mem2_trace: torch.Tensor, labels: torch.Tensor) -> torch.Tensor:
     """
     Computes cross-entropy loss using the max membrane potential over time.
 
@@ -21,10 +21,10 @@ def max_over_time_loss(mem2_trace: torch.Tensor, labels: torch.Tensor) -> torch.
 
 def regularization_loss(
     spk1_trace: torch.Tensor,
-    l1_thres: float = config.L1_THRES,
-    l1_strength: float = config.L1_STRENGTH,
-    l2_thres: float = config.L2_THRES,
-    l2_strength: float = config.L2_STRENGTH,
+    l1_thres: float,
+    l1_strength: float,
+    l2_thres: float,
+    l2_strength: float,
 ) -> tuple[torch.Tensor, torch.Tensor]:
     """
     Computes L1 and L2 spike-rate regularization losses for the hidden layer.
@@ -49,3 +49,24 @@ def regularization_loss(
     l2 = l2_strength / batch_size * l2_term.sum()
 
     return l1, l2
+
+
+def combined_loss(
+    mem2_trace: torch.Tensor,
+    spk1_trace: torch.Tensor,
+    labels: torch.Tensor,
+    l1_thres: float = config.L1_THRES,
+    l1_strength: float = config.L1_STRENGTH,
+    l2_thres: float = config.L2_THRES,
+    l2_strength: float = config.L2_STRENGTH,
+) -> tuple[float, float, float]:
+    ce_loss = over_time_loss(mem_2_trace=mem2_trace, labels=labels)
+    l1_loss, l2_loss = regularization_loss(
+        spk1_trace=spk1_trace,
+        l1_thres=l1_thres,
+        l1_strength=l1_strength,
+        l2_thres=l2_thres,
+        l2_strength=l2_strength,
+    )
+
+    return ce_loss, l1_loss, l2_loss
