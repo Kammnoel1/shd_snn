@@ -1,6 +1,6 @@
 import sys
 from collections.abc import Callable
-
+import time 
 import torch
 from torch.optim import Optimizer
 from torch.utils.data import DataLoader
@@ -8,7 +8,7 @@ from torch.utils.tensorboard.writer import SummaryWriter
 from tqdm.auto import tqdm
 
 from snn_shd import config
-from snn_shd.utils import MetricTracker, write_results
+from snn_shd.utils import MetricTracker, write_results, print_epoch_stats
 
 
 def train_one_epoch(
@@ -114,6 +114,7 @@ def train(
     results: dict[str, list] = {}
 
     for epoch in tqdm(range(epochs), disable=not sys.stdout.isatty()):
+        epoch_start = time.perf_counter()
         train_results = train_one_epoch(
             model=model,
             dataloader=train_dataloader,
@@ -121,16 +122,19 @@ def train(
             optimizer=optimizer,
             device=device,
         )
+        epoch_time = time.perf_counter() - epoch_start 
         test_results = evaluate(
             model=model, dataloader=test_dataloader, loss_fn=loss_fn, device=device
         )
 
         for name, value in {**train_results, **test_results}.items():
             results.setdefault(name, []).append(value)
-
+        results.setdefault("epoch_time_sec", []).append(epoch_time)
+        
         if writer is not None:
             write_results(writer, train_results, test_results, epoch)
-
+            writer.add_scalar("epoch_time", epoch_time, epoch)
+        print_epoch_stats(epoch=epoch, train_results=train_results, test_results=test_results, epoch_time=epoch_time)
     if writer is not None:
         writer.close()
 

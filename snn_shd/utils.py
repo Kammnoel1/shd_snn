@@ -171,7 +171,7 @@ def write_results(
         )
 
 
-def print_epoch_stats(epoch: int, train_results: dict, test_results: dict) -> None:
+def print_epoch_stats(epoch: int, train_results: dict, test_results: dict, epoch_time: float,) -> None:
     """
     Prints a single-line summary of this epoch's train/test metrics.
 
@@ -182,4 +182,4 @@ def print_epoch_stats(epoch: int, train_results: dict, test_results: dict) -> No
     """
     metrics = {**train_results, **test_results}
     summary = " | ".join(f"{name}: {value:.4f}" for name, value in metrics.items())
-    print(f"Epoch: {epoch + 1} | {summary}")
+    print(f"Epoch: {epoch + 1} | Time: {epoch_time} | {summary}")
