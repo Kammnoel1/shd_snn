@@ -28,8 +28,8 @@ class FeedforwardSNN(nn.Module):
         num_hidden: int = config.HIDDEN_UNITS,
         num_outputs: int = config.OUT_NEURONS,
         num_steps: int = config.NUM_STEPS,
-        kappa: float = config.KAPPA,
-        lambda_: float = config.LAMBDA_,
+        kappa: torch.Tensor = config.KAPPA,
+        lambda_: torch.Tensor = config.LAMBDA_,
         threshold: float = config.U_THRES,
         slope: float = config.SURROGATE_SCALE,
     ):

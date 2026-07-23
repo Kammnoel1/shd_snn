@@ -1,3 +1,5 @@
+import os
+from datetime import datetime
 from pathlib import Path
 
 import torch
@@ -52,7 +54,11 @@ def save_model(model: torch.nn.Module, target_dir: str, model_name: str):
     torch.save(obj=model.state_dict(), f=model_save_path)
 
 
-def get_data_paths(dir_path: Path) -> tuple[Path, Path]:
+def get_data_paths(
+    dir_path: str = config.DATA_DIR,
+    train_filename: str = config.TRAIN_FILENAME,
+    test_filename: str = config.TEST_FILENAME,
+) -> tuple[Path, Path]:
     """
     Locates the SHD training and testing files inside a directory.
 
@@ -66,10 +72,11 @@ def get_data_paths(dir_path: Path) -> tuple[Path, Path]:
       NotADirectoryError: If dir_path is not a directory.
       FileNotFoundError: If either expected file is missing.
     """
+    dir_path = Path(dir_path)
     if not dir_path.is_dir():
         raise NotADirectoryError(f"The path '{dir_path}' is not a directory.")
-    train_path = dir_path / config.TRAIN_FILENAME
-    test_path = dir_path / config.TEST_FILENAME
+    train_path = dir_path / train_filename
+    test_path = dir_path / test_filename
 
     if not train_path.is_file():
         raise FileNotFoundError(f"The file '{train_path}' does not exist.")
@@ -79,7 +86,7 @@ def get_data_paths(dir_path: Path) -> tuple[Path, Path]:
 
 
 def create_writer(
-    experiment_name: str, model_name: str, extra: str = None
+    experiment_name: str, model_name: str, extra: str | None = None
 ) -> torch.utils.tensorboard.writer.SummaryWriter:
     """
     Creates a torch.utils.tensorboard.writer.SummaryWriter() instance saving to a specific log_dir.
@@ -96,19 +103,18 @@ def create_writer(
     Returns:
         torch.utils.tensorboard.writer.SummaryWriter(): Instance of a writer saving to log_dir.
     """
-    import os
-    from datetime import datetime
 
     # Get timestamp of current date (all experiments on certain day live in same folder)
     timestamp = datetime.now().strftime(
         "%Y-%m-%d"
     )  # returns current date in YYYY-MM-DD format
 
+    root = Path("runs")
+
     if extra:
-        # Create log directory path
-        log_dir = os.path.join("runs", timestamp, experiment_name, model_name, extra)
+        log_dir = root / timestamp / experiment_name / model_name / extra
     else:
-        log_dir = os.path.join("runs", timestamp, experiment_name, model_name)
+        log_dir = root / timestamp / experiment_name / model_name
 
     print(f"[INFO] Created SummaryWriter, saving to: {log_dir}...")
     return SummaryWriter(log_dir=log_dir)

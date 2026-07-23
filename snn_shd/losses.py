@@ -60,7 +60,7 @@ def combined_loss(
     l2_thres: float = config.L2_THRES,
     l2_strength: float = config.L2_STRENGTH,
 ) -> tuple[float, float, float]:
-    ce_loss = over_time_loss(mem_2_trace=mem2_trace, labels=labels)
+    ce_loss = over_time_loss(mem2_trace=mem2_trace, labels=labels)
     l1_loss, l2_loss = regularization_loss(
         spk1_trace=spk1_trace,
         l1_thres=l1_thres,

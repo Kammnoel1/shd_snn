@@ -6,4 +6,9 @@
 testing/ 
 # ignore notebooks for now 
 notebooks/
-
+# ignore models for now 
+models/
+# ignore tensorboard logdirs for now 
+runs/
+# ignore compiled bytecode files 
+*.pyc

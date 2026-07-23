@@ -3,7 +3,7 @@ from pathlib import Path
 import h5py
 import numpy as np
 import torch
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, random_split
 
 from snn_shd import config
 from snn_shd.utils import get_data_paths
@@ -67,13 +67,14 @@ class SHDDataset(torch.utils.data.Dataset):
 
 
 def create_dataloaders(
-    data_path: Path,
     device: torch.device,
+    data_path: Path = config.DATA_DIR,
     duration: float = config.DURATION,
     num_steps: int = config.NUM_STEPS,
     num_neurons: int = config.IN_NEURONS,
     batch_size: int = config.BATCH_SIZE,
     num_workers: int = config.NUM_WORKERS,
+    test: bool = config.TEST_RUN,
 ) -> tuple[DataLoader, DataLoader]:
     """
     Creates training and testing DataLoaders for the SHD dataset.
@@ -105,20 +106,37 @@ def create_dataloaders(
         num_steps=num_steps,
         num_neurons=num_neurons,
     )
-
-    train_dataloader = DataLoader(
-        train_data,
-        batch_size=batch_size,
-        shuffle=True,
-        num_workers=num_workers,
-        pin_memory=pin_memory,
-    )
-    test_dataloader = DataLoader(
-        test_data,
-        batch_size=batch_size,
-        shuffle=False,  # don't need to shuffle test data
-        num_workers=num_workers,
-        pin_memory=pin_memory,
-    )
+    if test:
+        subset_train, _ = random_split(train_data, [0.05, 0.95])
+        subset_test, _ = random_split(test_data, [0.05, 0.95])
+        train_dataloader = DataLoader(
+            subset_train,
+            batch_size=batch_size,
+            shuffle=True,
+            num_workers=num_workers,
+            pin_memory=pin_memory,
+        )
+        test_dataloader = DataLoader(
+            subset_test,
+            batch_size=batch_size,
+            shuffle=False,  # don't need to shuffle test data
+            num_workers=num_workers,
+            pin_memory=pin_memory,
+        )
+    else:
+        train_dataloader = DataLoader(
+            train_data,
+            batch_size=batch_size,
+            shuffle=True,
+            num_workers=num_workers,
+            pin_memory=pin_memory,
+        )
+        test_dataloader = DataLoader(
+            test_data,
+            batch_size=batch_size,
+            shuffle=False,  # don't need to shuffle test data
+            num_workers=num_workers,
+            pin_memory=pin_memory,
+        )
 
     return train_dataloader, test_dataloader

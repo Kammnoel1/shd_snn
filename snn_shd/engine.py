@@ -6,6 +6,7 @@ from torch.utils.data import DataLoader
 from torch.utils.tensorboard.writer import SummaryWriter
 from tqdm.auto import tqdm
 
+from snn_shd import config
 from snn_shd.utils import MetricTracker, write_results
 
 
@@ -17,8 +18,6 @@ def train_one_epoch(
     device: torch.device,
 ):
     """ """
-    model = model.to(device)
-
     model.train()
 
     tracker = MetricTracker()
@@ -80,9 +79,9 @@ def train(
     test_dataloader: DataLoader,
     loss_fn: Callable,
     optimizer: Optimizer,
-    epochs: int,
     device: torch.device,
     writer: SummaryWriter | None = None,
+    epochs: int = config.NUM_EPOCHS,
 ) -> dict[str, list]:
     """
     Trains and evaluates a model for a number of epochs, logging metrics.
