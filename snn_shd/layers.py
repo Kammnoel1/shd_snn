@@ -1,5 +1,5 @@
 import torch
-from snntorch import Synaptic
+from snntorch import RSynaptic, Synaptic
 
 
 class CramerSynaptic(Synaptic):
@@ -78,3 +78,83 @@ class CramerSynaptic(Synaptic):
             return spk
         else:
             return spk, self.syn, self.mem
+
+
+class RCramerSynaptic(RSynaptic):
+    def _base_state_function(self, input_):
+        base_fn_mem = (
+            self.beta.clamp(0, 1) * self.mem + (1 - self.beta.clamp(0, 1)) * self.syn
+        )
+        base_fn_syn = (
+            self.alpha.clamp(0, 1) * self.syn + input_ + self.recurrent(self.spk)
+        )
+        return base_fn_syn, base_fn_mem
+
+    def _base_state_reset_zero(self, input_):
+        base_fn_mem = (
+            self.beta.clamp(0, 1) * self.mem + (1 - self.beta.clamp(0, 1)) * self.syn
+        )
+        base_fn_syn = torch.zeros_like(self.syn)
+
+        return base_fn_syn, base_fn_mem
+
+    def _base_zero(self, input_):
+        syn, mem = self._base_state_function(input_)
+        syn2, mem2 = self._base_state_reset_zero(input_)
+        syn -= syn2 * self.reset
+        mem -= mem2 * self.reset
+        mem += (1 - self.beta.clamp(0, 1)) * self.syn * self.reset
+        return syn, mem
+
+    def forward(self, input_, spk=None, syn=None, mem=None):
+        if spk is not None:
+            self.spk = spk
+        if syn is not None:
+            self.syn = syn
+
+        if mem is not None:
+            self.mem = mem
+
+        if self.init_hidden and (spk is not None or syn is not None or mem is not None):
+            raise TypeError(
+                "When `init_hidden=True`, RSynaptic expects 1 input argument."
+            )
+
+        if not self.spk.shape == input_.shape:
+            self.spk = torch.zeros_like(input_, device=self.spk.device)
+
+        if not self.syn.shape == input_.shape:
+            self.syn = torch.zeros_like(input_, device=self.syn.device)
+
+        if not self.mem.shape == input_.shape:
+            self.mem = torch.zeros_like(input_, device=self.mem.device)
+
+        self.reset = self.mem_reset(self.mem)
+
+        if self.inhibition:
+            self.spk = self.fire_inhibition(self.mem.size(0), self.mem)  # batch_size
+        else:
+            self.spk = self.fire(self.mem)
+
+        self.syn, self.mem = self.state_function(input_)
+
+        if self.state_quant:
+            self.mem = self.state_quant(self.mem)
+            self.syn = self.state_quant(self.syn)
+
+        if not self.reset_delay:
+            # reset membrane potential _right_ after spike
+            do_reset = (
+                spk / self.graded_spikes_factor - self.reset
+            )  # avoid double reset
+            if self.reset_mechanism_val == 0:  # reset by subtraction
+                self.mem = self.mem - do_reset * self.threshold
+            elif self.reset_mechanism_val == 1:  # reset to zero
+                self.mem = self.mem - do_reset * self.mem
+
+        if self.output:
+            return self.spk, self.syn, self.mem
+        elif self.init_hidden:
+            return self.spk
+        else:
+            return self.spk, self.syn, self.mem
