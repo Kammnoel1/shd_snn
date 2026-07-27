@@ -1,6 +1,7 @@
 import sys
+import time
 from collections.abc import Callable
-import time 
+
 import torch
 from torch.optim import Optimizer
 from torch.utils.data import DataLoader
@@ -8,7 +9,7 @@ from torch.utils.tensorboard.writer import SummaryWriter
 from tqdm.auto import tqdm
 
 from snn_shd import config
-from snn_shd.utils import MetricTracker, write_results, print_epoch_stats
+from snn_shd.utils import MetricTracker, print_epoch_stats, save_model, write_results
 
 
 def train_one_epoch(
@@ -92,6 +93,8 @@ def train(
     device: torch.device,
     writer: SummaryWriter | None = None,
     epochs: int = config.NUM_EPOCHS,
+    checkpoint_dir: str | None = None,
+    model_name: str = config.MODEL_NAME,
 ) -> dict[str, list]:
     """
     Trains and evaluates a model for a number of epochs, logging metrics.
@@ -105,6 +108,8 @@ def train(
       epochs: Number of epochs to train for.
       device: Target device to compute on.
       writer: SummaryWriter for TensorBoard logging, or None to disable logging.
+      checkpoint_dir: Directory to save a checkpoint after each epoch, or None to disable per-epoch checkpointing.
+      model_name: Filename (ending in .pt) for the saved checkpoint.
 
     Returns:
       A dict mapping each metric name (e.g. "train_ce", "test_l1") to a
@@ -122,7 +127,7 @@ def train(
             optimizer=optimizer,
             device=device,
         )
-        epoch_time = time.perf_counter() - epoch_start 
+        epoch_time = time.perf_counter() - epoch_start
         test_results = evaluate(
             model=model, dataloader=test_dataloader, loss_fn=loss_fn, device=device
         )
@@ -130,11 +135,25 @@ def train(
         for name, value in {**train_results, **test_results}.items():
             results.setdefault(name, []).append(value)
         results.setdefault("epoch_time_sec", []).append(epoch_time)
-        
+
+        print_epoch_stats(
+            epoch=epoch,
+            train_results=train_results,
+            test_results=test_results,
+            epoch_time=epoch_time,
+        )
+
         if writer is not None:
             write_results(writer, train_results, test_results, epoch)
             writer.add_scalar("epoch_time", epoch_time, epoch)
-        print_epoch_stats(epoch=epoch, train_results=train_results, test_results=test_results, epoch_time=epoch_time)
+
+        if checkpoint_dir is not None:
+            save_model(
+                model=model,
+                target_dir=checkpoint_dir,
+                model_name=f"{model_name}_epoch_{epoch+1:03d}.pt",
+            )
+
     if writer is not None:
         writer.close()
 

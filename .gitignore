@@ -12,3 +12,5 @@ models/
 runs/
 # ignore compiled bytecode files 
 *.pyc
+# ignore configuration from tracking 
+snn_shd/config.py 

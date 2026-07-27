@@ -1,6 +1,7 @@
 import torch
 
-from snn_shd import config, data_setup, engine, feedforward_simple, losses, utils
+from snn_shd import config, data_setup, engine, losses, utils
+from snn_shd.networks import FeedforwardSNN, RecurrentSNN
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -9,7 +10,7 @@ train_dataloader, test_dataloader = data_setup.create_dataloaders(
 )
 
 
-model = feedforward_simple.FeedforwardSNN()
+model = RecurrentSNN()
 
 loss_fn = losses.combined_loss
 optimizer = torch.optim.Adamax(params=model.parameters(), lr=config.LEARNING_RATE)
@@ -22,10 +23,6 @@ engine.train(
     optimizer=optimizer,
     device=device,
     writer=writer,
-)
-
-utils.save_model(
-    model=model,
-    target_dir="models",
+    checkpoint_dir="models",
     model_name=config.MODEL_NAME,
 )
