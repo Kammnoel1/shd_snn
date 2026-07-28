@@ -12,5 +12,7 @@ models/
 runs/
 # ignore compiled bytecode files 
 *.pyc
+# ignore cluster job logs 
+logs/
 # ignore configuration from tracking 
 snn_shd/config.py 

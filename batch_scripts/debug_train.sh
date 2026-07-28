@@ -13,9 +13,8 @@
 module purge
 module load Stages/2026 GCC Python
 
-source /p/project1/ebrains-0000010/shd_snn/.snn/bin/activate
-
 cd /p/project1/ebrains-0000010/shd_snn
+source .snn/bin/activate
 
 echo "=== Running short training (TEST_RUN mode) ==="
-srun python train.py
+srun python -m snn_shd.train
