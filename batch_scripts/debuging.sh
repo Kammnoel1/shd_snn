@@ -16,5 +16,11 @@ module load Stages/2026 GCC Python
 cd /p/project1/ebrains-0000010/shd_snn
 source .snn/bin/activate
 
-echo "=== Running short training (TEST_RUN mode) ==="
-srun python -m snn_shd.train
+export SNN_BATCH_SIZE=256
+export SNN_TEST_RUN=1
+export SNN_NUM_EPOCHS=3
+
+
+echo "$SNN_BATCH_SIZE"
+
+srun python -m testing.profiler

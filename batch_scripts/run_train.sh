@@ -16,5 +16,7 @@ module load Stages/2026 GCC Python
 cd /p/project1/ebrains-0000010/shd_snn
 source .snn/bin/activate
 
-# --- Run training ---
+export SNN_TEST_RUN=0
+export SNN_NUM_EPOCHS=150
+
 srun python -m snn_shd.train
