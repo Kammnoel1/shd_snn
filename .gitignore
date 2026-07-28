@@ -16,3 +16,5 @@ runs/
 logs/
 # ignore configuration from tracking 
 snn_shd/config.py 
+# ignore DS files 
+*.DS_Store
