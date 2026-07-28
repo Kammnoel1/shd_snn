@@ -71,12 +71,8 @@ class RecurrentSNN(nn.Module):
         spk1, syn1, mem1 = self.lif1.reset_mem()
         mem2 = self.lif2.reset_mem()
 
-        mem2_trace = torch.zeros(
-            self.num_steps, batch_size, self.num_outputs, device=x.device
-        )
-        spk1_trace = torch.zeros(
-            self.num_steps, batch_size, self.num_hidden, device=x.device
-        )
+        mem2_list = []
+        spk1_list = []
 
         for t in range(self.num_steps):
             cur1 = self.fc1(x[:, t, :])
@@ -85,7 +81,9 @@ class RecurrentSNN(nn.Module):
             cur2 = self.fc2(spk1)
             _, mem2 = self.lif2(cur2, mem2)
 
-            mem2_trace[t] = mem2
-            spk1_trace[t] = spk1
+            mem2_list.append(mem2)
+            spk1_list.append(spk1)
 
+        mem2_trace = torch.stack(mem2_list, dim=0)
+        spk1_trace = torch.stack(spk1_list, dim=0)
         return mem2_trace, spk1_trace
