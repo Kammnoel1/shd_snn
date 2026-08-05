@@ -14,7 +14,7 @@ runs/
 *.pyc
 # ignore cluster job logs 
 logs/
-# ignore configuration from tracking 
-snn_shd/config.py 
+# ignore MacOS configuration from tracking 
+snn_shd/local_config.py 
 # ignore DS files 
 *.DS_Store
