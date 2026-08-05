@@ -1,6 +1,7 @@
 from datetime import datetime
 from pathlib import Path
-
+import random 
+import numpy as np 
 import torch
 from torch.utils.tensorboard.writer import SummaryWriter
 
@@ -183,3 +184,17 @@ def print_epoch_stats(epoch: int, train_results: dict, test_results: dict, epoch
     metrics = {**train_results, **test_results}
     summary = " | ".join(f"{name}: {value:.4f}" for name, value in metrics.items())
     print(f"Epoch: {epoch + 1} | Time: {epoch_time} | {summary}")
+
+
+def set_seeds(seed: int) -> None: 
+    """
+    Sets random seeds for reproducibility across relevant frameworks. 
+
+    Args: 
+        seed: The seed value to use.
+    """
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available(): 
+        torch.cuda.manual_seed_all(seed)
