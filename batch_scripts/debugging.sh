@@ -20,7 +20,4 @@ export SNN_BATCH_SIZE=256
 export SNN_TEST_RUN=1
 export SNN_NUM_EPOCHS=3
 
-
-echo "$SNN_BATCH_SIZE"
-
-srun python -m testing.profiler
+srun python -m snn_shd.train
