@@ -1,6 +1,8 @@
+import random
 from datetime import datetime
 from pathlib import Path
 
+import numpy as np
 import torch
 from torch.utils.tensorboard.writer import SummaryWriter
 
@@ -199,3 +201,17 @@ def configure_transforms(transform: bool = False):
         ], [merge_channels(n_merge=10)]
     else:
         return [], []
+
+
+def set_seeds(seed: int) -> None:
+    """
+    Sets random seeds for reproducibility across relevant frameworks.
+
+    Args:
+        seed: The seed value to use.
+    """
+    random.seed(seed)
+    np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
