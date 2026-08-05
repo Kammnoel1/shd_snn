@@ -5,6 +5,7 @@ import torch
 from torch.utils.tensorboard.writer import SummaryWriter
 
 from snn_shd import config
+from snn_shd.transforms import channel_jitter, merge_channels
 
 
 class MetricTracker:
@@ -171,7 +172,12 @@ def write_results(
         )
 
 
-def print_epoch_stats(epoch: int, train_results: dict, test_results: dict, epoch_time: float,) -> None:
+def print_epoch_stats(
+    epoch: int,
+    train_results: dict,
+    test_results: dict,
+    epoch_time: float,
+) -> None:
     """
     Prints a single-line summary of this epoch's train/test metrics.
 
@@ -183,3 +189,13 @@ def print_epoch_stats(epoch: int, train_results: dict, test_results: dict, epoch
     metrics = {**train_results, **test_results}
     summary = " | ".join(f"{name}: {value:.4f}" for name, value in metrics.items())
     print(f"Epoch: {epoch + 1} | Time: {epoch_time} | {summary}")
+
+
+def configure_transforms(transform: bool = False):
+    if transform:
+        return [
+            channel_jitter(sigma=20, num_neurons=700),
+            merge_channels(n_merge=10),
+        ], [merge_channels(n_merge=10)]
+    else:
+        return [], []

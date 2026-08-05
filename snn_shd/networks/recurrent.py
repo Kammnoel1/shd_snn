@@ -67,7 +67,6 @@ class RecurrentSNN(nn.Module):
             spk1_trace: Hidden-layer spikes over time,
               shape (num_steps, batch_size, num_hidden).
         """
-        batch_size = x.shape[0]
         spk1, syn1, mem1 = self.lif1.reset_mem()
         mem2 = self.lif2.reset_mem()
 

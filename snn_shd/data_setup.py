@@ -6,7 +6,7 @@ import torch
 from torch.utils.data import DataLoader, random_split
 
 from snn_shd import config
-from snn_shd.utils import get_data_paths
+from snn_shd.utils import configure_transforms, get_data_paths
 
 
 class SHDDataset(torch.utils.data.Dataset):
@@ -21,12 +21,21 @@ class SHDDataset(torch.utils.data.Dataset):
     """
 
     def __init__(
-        self, data_path: Path, duration: float, num_steps: int, num_neurons: int
+        self,
+        data_path: Path,
+        duration: float,
+        num_steps: int,
+        num_neurons: int,
+        transforms=None,
     ):
         self.data_file = data_path
         self.num_neurons = num_neurons
         self.num_steps = num_steps
         self.max_time = duration
+        if transforms is None:
+            self.transforms = []
+        else:
+            self.transforms = transforms
 
         with h5py.File(data_path, "r") as f:
             self.labels = torch.from_numpy(f["labels"][:]).long()
@@ -48,6 +57,9 @@ class SHDDataset(torch.utils.data.Dataset):
         with h5py.File(self.data_file, "r") as f:
             times = f["spikes/times"][idx]
             units = f["spikes/units"][idx]
+
+        for transform in self.transforms:
+            times, units = transform(times, units)
 
         label = self.labels[idx]
 
@@ -74,6 +86,7 @@ def create_dataloaders(
     num_neurons: int = config.IN_NEURONS,
     batch_size: int = config.BATCH_SIZE,
     num_workers: int = config.NUM_WORKERS,
+    transform: bool = config.TRANSFORM,
     debug_subset: bool = config.TEST_RUN,
 ) -> tuple[DataLoader, DataLoader]:
     """
@@ -86,26 +99,30 @@ def create_dataloaders(
       num_steps: Number of discrete time steps to bin spikes into.
       num_neurons: Number of input neurons.
       batch_size: Number of samples per batch in each DataLoader.
+      transform: Whether to use data transformations.
       num_workers: Number of subprocesses used for data loading.
 
     Returns:
       A tuple of (train_dataloader, test_dataloader).
     """
     pin_memory = device.type == "cuda"
-
     train_path, test_path = get_data_paths(data_path)
+    train_transforms, test_transforms = configure_transforms(transform)
     train_data = SHDDataset(
         data_path=train_path,
         duration=duration,
         num_steps=num_steps,
         num_neurons=num_neurons,
+        transforms=train_transforms,
     )
     test_data = SHDDataset(
         data_path=test_path,
         duration=duration,
         num_steps=num_steps,
         num_neurons=num_neurons,
+        transforms=test_transforms,
     )
+
     if debug_subset:
         train_data, _ = random_split(train_data, [0.05, 0.95])
         test_data, _ = random_split(test_data, [0.05, 0.95])
@@ -124,5 +141,4 @@ def create_dataloaders(
         num_workers=num_workers,
         pin_memory=pin_memory,
     )
-
     return train_dataloader, test_dataloader
