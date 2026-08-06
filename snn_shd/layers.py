@@ -1,4 +1,5 @@
 import torch
+import torch.nn as nn
 from snntorch import RSynaptic, Synaptic
 
 
@@ -81,6 +82,11 @@ class CramerSynaptic(Synaptic):
 
 
 class RCramerSynaptic(RSynaptic):
+    def _init_recurrent_linear(self):
+        self.recurrent = nn.Linear(
+            self.linear_features, self.linear_features, bias=False
+        )
+
     def _base_state_function(self, input_):
         base_fn_mem = (
             self.beta.clamp(0, 1) * self.mem + (1 - self.beta.clamp(0, 1)) * self.syn
