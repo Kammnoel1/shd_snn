@@ -1,4 +1,3 @@
-import snntorch as snn
 import torch
 from snntorch import surrogate
 from torch import nn
@@ -49,7 +48,11 @@ class FeedforwardSNN(nn.Module):
         )
 
         self.fc2 = nn.Linear(num_hidden, num_outputs, bias=False)
-        self.lif2 = snn.Leaky(beta=lambda_, reset_mechanism="none")
+        self.lif2 = CramerSynaptic(
+            alpha=kappa,
+            beta=lambda_,
+            reset_mechanism="none",
+        )
 
     def forward(self, x):
         """
@@ -67,7 +70,7 @@ class FeedforwardSNN(nn.Module):
         """
         batch_size = x.shape[0]
         syn1, mem1 = self.lif1.reset_mem()
-        mem2 = self.lif2.reset_mem()
+        syn2, mem2 = self.lif2.reset_mem()
 
         mem2_trace = torch.zeros(
             self.num_steps, batch_size, self.num_outputs, device=x.device
@@ -81,7 +84,7 @@ class FeedforwardSNN(nn.Module):
             spk1, syn1, mem1 = self.lif1(cur1, syn1, mem1)
 
             cur2 = self.fc2(spk1)
-            _, mem2 = self.lif2(cur2, mem2)
+            _, syn2, mem2 = self.lif2(cur2, syn2, mem2)
 
             mem2_trace[t] = mem2
             spk1_trace[t] = spk1

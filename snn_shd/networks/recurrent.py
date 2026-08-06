@@ -1,10 +1,9 @@
-import snntorch as snn
 import torch
 from snntorch import surrogate
 from torch import nn
 
 from snn_shd import config
-from snn_shd.layers import RCramerSynaptic
+from snn_shd.layers import CramerSynaptic, RCramerSynaptic
 
 
 class RecurrentSNN(nn.Module):
@@ -51,7 +50,11 @@ class RecurrentSNN(nn.Module):
         )
 
         self.fc2 = nn.Linear(num_hidden, num_outputs, bias=False)
-        self.lif2 = snn.Leaky(beta=lambda_, reset_mechanism="none")
+        self.lif2 = CramerSynaptic(
+            alpha=kappa,
+            beta=lambda_,
+            reset_mechanism="none",
+        )
 
     def forward(self, x):
         """
@@ -68,7 +71,7 @@ class RecurrentSNN(nn.Module):
               shape (num_steps, batch_size, num_hidden).
         """
         spk1, syn1, mem1 = self.lif1.reset_mem()
-        mem2 = self.lif2.reset_mem()
+        syn2, mem2 = self.lif2.reset_mem()
 
         mem2_list = []
         spk1_list = []
@@ -78,7 +81,7 @@ class RecurrentSNN(nn.Module):
             spk1, syn1, mem1 = self.lif1(cur1, spk1, syn1, mem1)
 
             cur2 = self.fc2(spk1)
-            _, mem2 = self.lif2(cur2, mem2)
+            _, syn2, mem2 = self.lif2(cur2, syn2, mem2)
 
             mem2_list.append(mem2)
             spk1_list.append(spk1)
