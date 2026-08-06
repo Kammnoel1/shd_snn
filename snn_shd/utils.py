@@ -193,12 +193,32 @@ def print_epoch_stats(
     print(f"Epoch: {epoch + 1} | Time: {epoch_time} | {summary}")
 
 
-def configure_transforms(transform: bool = False):
+def configure_transforms(
+    transform: bool = config.TRANSFORM,
+    sigma: float = config.JITTER_SIGMA,
+    n_merge: int = config.MERGE_FACTOR,
+    num_channels: int = config.RAW_IN_NEURONS,
+):
+    """
+    Builds the train/test input transforms.
+
+    Channel jitter is training-only data augmentation and is applied in the raw
+    700-channel index space, before neighbouring channels are merged.
+
+    Args:
+      transform: Whether to apply jitter and channel merging at all.
+      sigma: Standard deviation of the channel jitter, in raw channel indices.
+      n_merge: Number of neighbouring raw channels condensed into one input unit.
+      num_channels: Number of raw cochlea channels in the data files.
+
+    Returns:
+      A tuple of (train_transforms, test_transforms).
+    """
     if transform:
         return [
-            channel_jitter(sigma=20, num_neurons=700),
-            merge_channels(n_merge=10),
-        ], [merge_channels(n_merge=10)]
+            channel_jitter(sigma=sigma, num_neurons=num_channels),
+            merge_channels(n_merge=n_merge),
+        ], [merge_channels(n_merge=n_merge)]
     else:
         return [], []
 
