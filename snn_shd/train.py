@@ -12,11 +12,15 @@ train_dataloader, test_dataloader = data_setup.create_dataloaders(
 )
 
 
-model = RecurrentSNN()
+model = RecurrentSNN() if config.ARCH == "recurrent" else FeedforwardSNN()
 
 loss_fn = losses.combined_loss
 optimizer = torch.optim.Adamax(params=model.parameters(), lr=config.LEARNING_RATE)
-writer = utils.create_writer(experiment_name="test_runs", model_name=config.MODEL_NAME, extra=f"bs{config.BATCH_SIZE}_seed{config.SEED}", )
+writer = utils.create_writer(
+    experiment_name="test_runs",
+    model_name=config.MODEL_NAME,
+    extra=f"bs{config.BATCH_SIZE}_seed{config.SEED}",
+)
 engine.train(
     model=model,
     train_dataloader=train_dataloader,
@@ -25,6 +29,6 @@ engine.train(
     optimizer=optimizer,
     device=device,
     writer=writer,
-    checkpoint_dir="models",
+    checkpoint_dir=f"models/{config.MODEL_NAME}_seed{config.SEED}",
     model_name=config.MODEL_NAME,
 )
