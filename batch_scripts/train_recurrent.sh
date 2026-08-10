@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --time=08:00:00
 #SBATCH --job-name=rsnn
-#SBATCH --array=4-9
+#SBATCH --array=0-9
 #SBATCH --output=logs/rsnn_%A_%a.out
 #SBATCH --error=logs/rsnn_%A_%a.err
 
