@@ -73,7 +73,11 @@ class SHDDataset(torch.utils.data.Dataset):
             self.num_steps, self.num_neurons, dtype=torch.float32
         )
 
-        spike_matrix[bin_indices, units] = 1.0
+        spike_matrix.index_put_(
+            (torch.as_tensor(bin_indices), torch.as_tensor(units, dtype=torch.int64)),
+            torch.ones(len(units), dtype=torch.float32),
+            accumulate=True,
+        )
 
         return spike_matrix, label
 
