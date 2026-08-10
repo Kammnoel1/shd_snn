@@ -12,8 +12,8 @@ models/
 runs/
 # ignore compiled bytecode files 
 *.pyc
-# ignore cluster job logs 
-logs/
+# ignore current cluster job logs 
+logs/rest
 # ignore MacOS configuration from tracking 
 snn_shd/local_config.py 
 # ignore DS files 

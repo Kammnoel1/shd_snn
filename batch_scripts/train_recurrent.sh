@@ -6,7 +6,7 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --time=08:00:00
 #SBATCH --job-name=rsnn
-#SBATCH --array=0-3
+#SBATCH --array=4-9
 #SBATCH --output=logs/rsnn_%A_%a.out
 #SBATCH --error=logs/rsnn_%A_%a.err
 
@@ -19,12 +19,10 @@ module load Stages/2026 GCC Python
 cd /p/project1/ebrains-0000010/shd_snn
 source .snn/bin/activate
 
-SEEDS=(0 1 2 3)
-
 # --- Run parameters ---
 export SNN_TEST_RUN=0
 export SNN_NUM_EPOCHS=150
-export SNN_SEED=${SEEDS[$SLURM_ARRAY_TASK_ID]}
+export SNN_SEED=$SLURM_ARRAY_TASK_ID
 
 # --- Hyperparameters ---
 export SNN_ARCH=recurrent

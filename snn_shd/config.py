@@ -18,7 +18,7 @@ NUM_STEPS = int(DURATION / time_step)  # number of time steps
 U_THRES = 1.0
 
 LEARNING_RATE = 0.001  # learning rate
-SURROGATE_SCALE = 100  # steepness beta of the fast-sigmoid surrogate
+SURROGATE_SCALE = 40  # steepness beta of the fast-sigmoid surrogate
 L1_THRES = 0.01  # L1 threshold: average firing rate
 L1_STRENGTH = 1  # scales L1 regularizer
 L2_THRES = 100  # L2 threshold: average spike count per neuron
