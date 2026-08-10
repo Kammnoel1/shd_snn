@@ -1,0 +1,302 @@
+Task 3: arch=recurrent seed=3
+[INFO] Created SummaryWriter, saving to: runs/2026-08-07/test_runs/recurrentSNN/bs256_seed3...
+Epoch: 1 | Time: 153.71001706700002 | train_total: 2.9512 | train_ce: 2.9512 | train_l1: 0.0000 | train_l2: 0.0000 | train_acc: 0.1121 | test_total: 2.8725 | test_ce: 2.8725 | test_l1: 0.0000 | test_l2: 0.0000 | test_acc: 0.1489
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_001.pt
+Epoch: 2 | Time: 149.34238418799998 | train_total: 2.8231 | train_ce: 2.8231 | train_l1: 0.0000 | train_l2: 0.0000 | train_acc: 0.1659 | test_total: 2.7415 | test_ce: 2.7415 | test_l1: 0.0000 | test_l2: 0.0000 | test_acc: 0.1705
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_002.pt
+Epoch: 3 | Time: 149.292150428 | train_total: 2.6930 | train_ce: 2.6930 | train_l1: 0.0000 | train_l2: 0.0000 | train_acc: 0.2197 | test_total: 2.5984 | test_ce: 2.5984 | test_l1: 0.0001 | test_l2: 0.0000 | test_acc: 0.2398
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_003.pt
+Epoch: 4 | Time: 149.1950341139999 | train_total: 2.5434 | train_ce: 2.5434 | train_l1: 0.0001 | train_l2: 0.0000 | train_acc: 0.2577 | test_total: 2.4265 | test_ce: 2.4263 | test_l1: 0.0001 | test_l2: 0.0000 | test_acc: 0.2650
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_004.pt
+Epoch: 5 | Time: 149.51343027899998 | train_total: 2.3544 | train_ce: 2.3541 | train_l1: 0.0003 | train_l2: 0.0000 | train_acc: 0.2967 | test_total: 2.2755 | test_ce: 2.2749 | test_l1: 0.0006 | test_l2: 0.0000 | test_acc: 0.2796
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_005.pt
+Epoch: 6 | Time: 149.38474413699987 | train_total: 2.1809 | train_ce: 2.1792 | train_l1: 0.0016 | train_l2: 0.0000 | train_acc: 0.3361 | test_total: 2.0750 | test_ce: 2.0716 | test_l1: 0.0034 | test_l2: 0.0000 | test_acc: 0.3591
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_006.pt
+Epoch: 7 | Time: 149.466478457 | train_total: 2.0514 | train_ce: 2.0477 | train_l1: 0.0037 | train_l2: 0.0000 | train_acc: 0.3843 | test_total: 1.9764 | test_ce: 1.9712 | test_l1: 0.0051 | test_l2: 0.0000 | test_acc: 0.3812
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_007.pt
+Epoch: 8 | Time: 149.54797986699987 | train_total: 1.9247 | train_ce: 1.9192 | train_l1: 0.0055 | train_l2: 0.0000 | train_acc: 0.4020 | test_total: 1.8127 | test_ce: 1.8051 | test_l1: 0.0076 | test_l2: 0.0000 | test_acc: 0.4554
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_008.pt
+Epoch: 9 | Time: 149.87342775699994 | train_total: 1.8092 | train_ce: 1.8006 | train_l1: 0.0086 | train_l2: 0.0000 | train_acc: 0.4308 | test_total: 1.7305 | test_ce: 1.7196 | test_l1: 0.0108 | test_l2: 0.0000 | test_acc: 0.4337
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_009.pt
+Epoch: 10 | Time: 149.28280090099997 | train_total: 1.7136 | train_ce: 1.7042 | train_l1: 0.0094 | train_l2: 0.0000 | train_acc: 0.4644 | test_total: 1.6429 | test_ce: 1.6306 | test_l1: 0.0123 | test_l2: 0.0000 | test_acc: 0.4788
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_010.pt
+Epoch: 11 | Time: 149.49613357999988 | train_total: 1.6229 | train_ce: 1.6121 | train_l1: 0.0107 | train_l2: 0.0000 | train_acc: 0.4926 | test_total: 1.6182 | test_ce: 1.6065 | test_l1: 0.0117 | test_l2: 0.0000 | test_acc: 0.4792
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_011.pt
+Epoch: 12 | Time: 149.406783293 | train_total: 1.6030 | train_ce: 1.5885 | train_l1: 0.0145 | train_l2: 0.0000 | train_acc: 0.5067 | test_total: 1.5969 | test_ce: 1.5832 | test_l1: 0.0137 | test_l2: 0.0000 | test_acc: 0.4686
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_012.pt
+Epoch: 13 | Time: 149.49165102000006 | train_total: 1.5200 | train_ce: 1.5075 | train_l1: 0.0125 | train_l2: 0.0000 | train_acc: 0.5242 | test_total: 1.5489 | test_ce: 1.5344 | test_l1: 0.0145 | test_l2: 0.0000 | test_acc: 0.5009
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_013.pt
+Epoch: 14 | Time: 149.24140143800014 | train_total: 1.4514 | train_ce: 1.4377 | train_l1: 0.0137 | train_l2: 0.0000 | train_acc: 0.5560 | test_total: 1.5034 | test_ce: 1.4884 | test_l1: 0.0150 | test_l2: 0.0000 | test_acc: 0.5309
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_014.pt
+Epoch: 15 | Time: 149.2968953479999 | train_total: 1.4194 | train_ce: 1.4043 | train_l1: 0.0150 | train_l2: 0.0000 | train_acc: 0.5636 | test_total: 1.5033 | test_ce: 1.4886 | test_l1: 0.0147 | test_l2: 0.0000 | test_acc: 0.5062
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_015.pt
+Epoch: 16 | Time: 149.06987836300004 | train_total: 1.3622 | train_ce: 1.3462 | train_l1: 0.0159 | train_l2: 0.0000 | train_acc: 0.5847 | test_total: 1.4725 | test_ce: 1.4561 | test_l1: 0.0164 | test_l2: 0.0000 | test_acc: 0.5243
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_016.pt
+Epoch: 17 | Time: 149.349901476 | train_total: 1.3159 | train_ce: 1.2985 | train_l1: 0.0174 | train_l2: 0.0000 | train_acc: 0.5989 | test_total: 1.4497 | test_ce: 1.4342 | test_l1: 0.0155 | test_l2: 0.0000 | test_acc: 0.5353
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_017.pt
+Epoch: 18 | Time: 149.19896654800004 | train_total: 1.2903 | train_ce: 1.2720 | train_l1: 0.0183 | train_l2: 0.0000 | train_acc: 0.6036 | test_total: 1.4142 | test_ce: 1.3904 | test_l1: 0.0238 | test_l2: 0.0000 | test_acc: 0.5371
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_018.pt
+Epoch: 19 | Time: 149.24708938499998 | train_total: 1.2501 | train_ce: 1.2319 | train_l1: 0.0182 | train_l2: 0.0000 | train_acc: 0.6145 | test_total: 1.3480 | test_ce: 1.3288 | test_l1: 0.0192 | test_l2: 0.0000 | test_acc: 0.5601
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_019.pt
+Epoch: 20 | Time: 149.42779654099968 | train_total: 1.2106 | train_ce: 1.1911 | train_l1: 0.0195 | train_l2: 0.0000 | train_acc: 0.6312 | test_total: 1.3259 | test_ce: 1.3053 | test_l1: 0.0206 | test_l2: 0.0000 | test_acc: 0.5698
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_020.pt
+Epoch: 21 | Time: 149.19591745399975 | train_total: 1.1954 | train_ce: 1.1743 | train_l1: 0.0210 | train_l2: 0.0000 | train_acc: 0.6351 | test_total: 1.4384 | test_ce: 1.4210 | test_l1: 0.0174 | test_l2: 0.0000 | test_acc: 0.5345
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_021.pt
+Epoch: 22 | Time: 149.27111941900012 | train_total: 1.1553 | train_ce: 1.1346 | train_l1: 0.0207 | train_l2: 0.0000 | train_acc: 0.6443 | test_total: 1.3043 | test_ce: 1.2834 | test_l1: 0.0209 | test_l2: 0.0000 | test_acc: 0.5667
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_022.pt
+Epoch: 23 | Time: 149.1601620780002 | train_total: 1.1073 | train_ce: 1.0860 | train_l1: 0.0213 | train_l2: 0.0000 | train_acc: 0.6639 | test_total: 1.2538 | test_ce: 1.2315 | test_l1: 0.0224 | test_l2: 0.0000 | test_acc: 0.5804
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_023.pt
+Epoch: 24 | Time: 149.46110123200015 | train_total: 1.0782 | train_ce: 1.0555 | train_l1: 0.0227 | train_l2: 0.0000 | train_acc: 0.6746 | test_total: 1.2293 | test_ce: 1.2023 | test_l1: 0.0270 | test_l2: 0.0000 | test_acc: 0.5822
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_024.pt
+Epoch: 25 | Time: 149.872164505 | train_total: 1.0307 | train_ce: 1.0079 | train_l1: 0.0228 | train_l2: 0.0000 | train_acc: 0.6880 | test_total: 1.1976 | test_ce: 1.1719 | test_l1: 0.0257 | test_l2: 0.0000 | test_acc: 0.6003
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_025.pt
+Epoch: 26 | Time: 149.81160203199943 | train_total: 0.9999 | train_ce: 0.9762 | train_l1: 0.0237 | train_l2: 0.0000 | train_acc: 0.6968 | test_total: 1.1300 | test_ce: 1.1039 | test_l1: 0.0261 | test_l2: 0.0000 | test_acc: 0.6219
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_026.pt
+Epoch: 27 | Time: 149.46281777400054 | train_total: 0.9749 | train_ce: 0.9501 | train_l1: 0.0248 | train_l2: 0.0000 | train_acc: 0.7005 | test_total: 1.1434 | test_ce: 1.1158 | test_l1: 0.0276 | test_l2: 0.0000 | test_acc: 0.6078
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_027.pt
+Epoch: 28 | Time: 149.3371385520004 | train_total: 0.9294 | train_ce: 0.9048 | train_l1: 0.0246 | train_l2: 0.0000 | train_acc: 0.7224 | test_total: 1.1245 | test_ce: 1.0994 | test_l1: 0.0251 | test_l2: 0.0000 | test_acc: 0.6162
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_028.pt
+Epoch: 29 | Time: 149.5287801630002 | train_total: 0.9010 | train_ce: 0.8765 | train_l1: 0.0245 | train_l2: 0.0000 | train_acc: 0.7272 | test_total: 1.1475 | test_ce: 1.1211 | test_l1: 0.0264 | test_l2: 0.0000 | test_acc: 0.6228
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_029.pt
+Epoch: 30 | Time: 149.3257908859996 | train_total: 0.9056 | train_ce: 0.8801 | train_l1: 0.0255 | train_l2: 0.0000 | train_acc: 0.7216 | test_total: 1.1438 | test_ce: 1.0998 | test_l1: 0.0362 | test_l2: 0.0077 | test_acc: 0.6369
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_030.pt
+Epoch: 31 | Time: 149.22536669799956 | train_total: 0.9233 | train_ce: 0.8960 | train_l1: 0.0273 | train_l2: 0.0000 | train_acc: 0.7110 | test_total: 1.1869 | test_ce: 1.1591 | test_l1: 0.0278 | test_l2: 0.0000 | test_acc: 0.6210
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_031.pt
+Epoch: 32 | Time: 149.26925782599938 | train_total: 0.8864 | train_ce: 0.8594 | train_l1: 0.0270 | train_l2: 0.0000 | train_acc: 0.7201 | test_total: 1.0987 | test_ce: 1.0659 | test_l1: 0.0326 | test_l2: 0.0002 | test_acc: 0.6338
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_032.pt
+Epoch: 33 | Time: 149.62809205299982 | train_total: 0.8844 | train_ce: 0.8582 | train_l1: 0.0263 | train_l2: 0.0000 | train_acc: 0.7227 | test_total: 1.2247 | test_ce: 1.2011 | test_l1: 0.0236 | test_l2: 0.0000 | test_acc: 0.6003
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_033.pt
+Epoch: 34 | Time: 149.1839623269998 | train_total: 0.9408 | train_ce: 0.9126 | train_l1: 0.0282 | train_l2: 0.0000 | train_acc: 0.6961 | test_total: 1.2271 | test_ce: 1.2038 | test_l1: 0.0232 | test_l2: 0.0000 | test_acc: 0.6020
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_034.pt
+Epoch: 35 | Time: 149.62049049300003 | train_total: 0.8694 | train_ce: 0.8402 | train_l1: 0.0291 | train_l2: 0.0000 | train_acc: 0.7288 | test_total: 1.1811 | test_ce: 1.1539 | test_l1: 0.0272 | test_l2: 0.0000 | test_acc: 0.6184
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_035.pt
+Epoch: 36 | Time: 148.92566154700035 | train_total: 0.8224 | train_ce: 0.7955 | train_l1: 0.0268 | train_l2: 0.0000 | train_acc: 0.7452 | test_total: 1.2035 | test_ce: 1.1779 | test_l1: 0.0255 | test_l2: 0.0000 | test_acc: 0.6042
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_036.pt
+Epoch: 37 | Time: 149.20184074500048 | train_total: 0.8067 | train_ce: 0.7796 | train_l1: 0.0271 | train_l2: 0.0000 | train_acc: 0.7475 | test_total: 1.2060 | test_ce: 1.1777 | test_l1: 0.0283 | test_l2: 0.0000 | test_acc: 0.6148
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_037.pt
+Epoch: 38 | Time: 149.0693834170006 | train_total: 0.7837 | train_ce: 0.7561 | train_l1: 0.0276 | train_l2: 0.0000 | train_acc: 0.7567 | test_total: 1.1880 | test_ce: 1.1600 | test_l1: 0.0280 | test_l2: 0.0000 | test_acc: 0.6170
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_038.pt
+Epoch: 39 | Time: 148.69168748299944 | train_total: 0.7949 | train_ce: 0.7672 | train_l1: 0.0277 | train_l2: 0.0000 | train_acc: 0.7480 | test_total: 1.2205 | test_ce: 1.1939 | test_l1: 0.0266 | test_l2: 0.0000 | test_acc: 0.6162
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_039.pt
+Epoch: 40 | Time: 149.50213262800025 | train_total: 0.7989 | train_ce: 0.7711 | train_l1: 0.0278 | train_l2: 0.0000 | train_acc: 0.7447 | test_total: 1.2524 | test_ce: 1.2284 | test_l1: 0.0241 | test_l2: 0.0000 | test_acc: 0.5972
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_040.pt
+Epoch: 41 | Time: 149.3677789129997 | train_total: 0.8993 | train_ce: 0.8699 | train_l1: 0.0294 | train_l2: 0.0000 | train_acc: 0.7035 | test_total: 1.2705 | test_ce: 1.2418 | test_l1: 0.0287 | test_l2: 0.0000 | test_acc: 0.5848
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_041.pt
+Epoch: 42 | Time: 149.53054296999926 | train_total: 0.9155 | train_ce: 0.8862 | train_l1: 0.0293 | train_l2: 0.0000 | train_acc: 0.6893 | test_total: 1.2497 | test_ce: 1.2107 | test_l1: 0.0387 | test_l2: 0.0004 | test_acc: 0.6025
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_042.pt
+Epoch: 43 | Time: 149.23106636299963 | train_total: 0.8590 | train_ce: 0.8288 | train_l1: 0.0302 | train_l2: 0.0000 | train_acc: 0.7137 | test_total: 1.2503 | test_ce: 1.2269 | test_l1: 0.0234 | test_l2: 0.0000 | test_acc: 0.5963
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_043.pt
+Epoch: 44 | Time: 149.59943504900002 | train_total: 0.8055 | train_ce: 0.7780 | train_l1: 0.0275 | train_l2: 0.0000 | train_acc: 0.7369 | test_total: 1.1028 | test_ce: 1.0655 | test_l1: 0.0365 | test_l2: 0.0007 | test_acc: 0.6436
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_044.pt
+Epoch: 45 | Time: 149.5818323550002 | train_total: 0.8118 | train_ce: 0.7831 | train_l1: 0.0287 | train_l2: 0.0000 | train_acc: 0.7341 | test_total: 1.1430 | test_ce: 1.1187 | test_l1: 0.0243 | test_l2: 0.0000 | test_acc: 0.6316
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_045.pt
+Epoch: 46 | Time: 149.73431608600004 | train_total: 0.7690 | train_ce: 0.7418 | train_l1: 0.0272 | train_l2: 0.0000 | train_acc: 0.7511 | test_total: 1.1342 | test_ce: 1.1055 | test_l1: 0.0288 | test_l2: 0.0000 | test_acc: 0.6162
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_046.pt
+Epoch: 47 | Time: 149.63536515599844 | train_total: 0.7301 | train_ce: 0.7043 | train_l1: 0.0258 | train_l2: 0.0000 | train_acc: 0.7701 | test_total: 1.0781 | test_ce: 1.0519 | test_l1: 0.0262 | test_l2: 0.0000 | test_acc: 0.6462
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_047.pt
+Epoch: 48 | Time: 149.54132309899978 | train_total: 0.6710 | train_ce: 0.6445 | train_l1: 0.0266 | train_l2: 0.0000 | train_acc: 0.7925 | test_total: 1.1003 | test_ce: 1.0744 | test_l1: 0.0259 | test_l2: 0.0000 | test_acc: 0.6352
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_048.pt
+Epoch: 49 | Time: 149.46359144599955 | train_total: 0.6739 | train_ce: 0.6479 | train_l1: 0.0260 | train_l2: 0.0000 | train_acc: 0.7919 | test_total: 1.0582 | test_ce: 1.0252 | test_l1: 0.0324 | test_l2: 0.0005 | test_acc: 0.6555
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_049.pt
+Epoch: 50 | Time: 148.694909758 | train_total: 0.6831 | train_ce: 0.6556 | train_l1: 0.0275 | train_l2: 0.0000 | train_acc: 0.7833 | test_total: 1.0208 | test_ce: 0.9929 | test_l1: 0.0279 | test_l2: 0.0000 | test_acc: 0.6572
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_050.pt
+Epoch: 51 | Time: 147.7094581750007 | train_total: 0.7041 | train_ce: 0.6761 | train_l1: 0.0280 | train_l2: 0.0000 | train_acc: 0.7705 | test_total: 1.1305 | test_ce: 1.1062 | test_l1: 0.0244 | test_l2: 0.0000 | test_acc: 0.6511
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_051.pt
+Epoch: 52 | Time: 148.16688056100065 | train_total: 0.6635 | train_ce: 0.6365 | train_l1: 0.0270 | train_l2: 0.0000 | train_acc: 0.7940 | test_total: 1.1341 | test_ce: 1.1015 | test_l1: 0.0312 | test_l2: 0.0015 | test_acc: 0.6237
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_052.pt
+Epoch: 53 | Time: 148.10060422400056 | train_total: 0.6856 | train_ce: 0.6588 | train_l1: 0.0268 | train_l2: 0.0000 | train_acc: 0.7836 | test_total: 1.0569 | test_ce: 1.0233 | test_l1: 0.0336 | test_l2: 0.0000 | test_acc: 0.6564
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_053.pt
+Epoch: 54 | Time: 147.46062472099948 | train_total: 0.7274 | train_ce: 0.6997 | train_l1: 0.0277 | train_l2: 0.0000 | train_acc: 0.7613 | test_total: 1.1095 | test_ce: 1.0816 | test_l1: 0.0279 | test_l2: 0.0000 | test_acc: 0.6374
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_054.pt
+Epoch: 55 | Time: 147.3648286769985 | train_total: 0.6827 | train_ce: 0.6545 | train_l1: 0.0282 | train_l2: 0.0000 | train_acc: 0.7784 | test_total: 1.0749 | test_ce: 1.0493 | test_l1: 0.0256 | test_l2: 0.0000 | test_acc: 0.6533
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_055.pt
+Epoch: 56 | Time: 147.35121792600148 | train_total: 0.6660 | train_ce: 0.6401 | train_l1: 0.0259 | train_l2: 0.0000 | train_acc: 0.7848 | test_total: 1.0687 | test_ce: 1.0365 | test_l1: 0.0322 | test_l2: 0.0000 | test_acc: 0.6484
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_056.pt
+Epoch: 57 | Time: 147.3515638789995 | train_total: 0.6513 | train_ce: 0.6239 | train_l1: 0.0274 | train_l2: 0.0000 | train_acc: 0.7912 | test_total: 1.1010 | test_ce: 1.0761 | test_l1: 0.0250 | test_l2: 0.0000 | test_acc: 0.6564
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_057.pt
+Epoch: 58 | Time: 147.382491037999 | train_total: 0.6738 | train_ce: 0.6457 | train_l1: 0.0282 | train_l2: 0.0000 | train_acc: 0.7788 | test_total: 1.1789 | test_ce: 1.1539 | test_l1: 0.0250 | test_l2: 0.0000 | test_acc: 0.6383
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_058.pt
+Epoch: 59 | Time: 147.74066596600096 | train_total: 0.6762 | train_ce: 0.6499 | train_l1: 0.0263 | train_l2: 0.0000 | train_acc: 0.7803 | test_total: 1.1122 | test_ce: 1.0813 | test_l1: 0.0310 | test_l2: 0.0000 | test_acc: 0.6418
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_059.pt
+Epoch: 60 | Time: 147.9489486450002 | train_total: 0.6282 | train_ce: 0.6017 | train_l1: 0.0264 | train_l2: 0.0000 | train_acc: 0.7995 | test_total: 1.0346 | test_ce: 1.0097 | test_l1: 0.0249 | test_l2: 0.0000 | test_acc: 0.6661
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_060.pt
+Epoch: 61 | Time: 147.9460973639998 | train_total: 0.5843 | train_ce: 0.5574 | train_l1: 0.0269 | train_l2: 0.0000 | train_acc: 0.8190 | test_total: 1.0223 | test_ce: 0.9944 | test_l1: 0.0279 | test_l2: 0.0000 | test_acc: 0.6568
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_061.pt
+Epoch: 62 | Time: 148.00309687699882 | train_total: 0.5754 | train_ce: 0.5492 | train_l1: 0.0262 | train_l2: 0.0000 | train_acc: 0.8165 | test_total: 1.0336 | test_ce: 1.0038 | test_l1: 0.0299 | test_l2: 0.0000 | test_acc: 0.6577
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_062.pt
+Epoch: 63 | Time: 148.95247371699952 | train_total: 0.5508 | train_ce: 0.5242 | train_l1: 0.0267 | train_l2: 0.0000 | train_acc: 0.8302 | test_total: 1.0908 | test_ce: 1.0655 | test_l1: 0.0254 | test_l2: 0.0000 | test_acc: 0.6661
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_063.pt
+Epoch: 64 | Time: 147.8681472749995 | train_total: 0.5444 | train_ce: 0.5177 | train_l1: 0.0268 | train_l2: 0.0000 | train_acc: 0.8296 | test_total: 0.9809 | test_ce: 0.9530 | test_l1: 0.0279 | test_l2: 0.0000 | test_acc: 0.6833
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_064.pt
+Epoch: 65 | Time: 147.92815955900005 | train_total: 0.5543 | train_ce: 0.5282 | train_l1: 0.0260 | train_l2: 0.0000 | train_acc: 0.8271 | test_total: 1.0146 | test_ce: 0.9850 | test_l1: 0.0295 | test_l2: 0.0000 | test_acc: 0.6656
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_065.pt
+Epoch: 66 | Time: 148.4562721400016 | train_total: 0.5402 | train_ce: 0.5144 | train_l1: 0.0258 | train_l2: 0.0000 | train_acc: 0.8341 | test_total: 1.0093 | test_ce: 0.9784 | test_l1: 0.0309 | test_l2: 0.0000 | test_acc: 0.6714
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_066.pt
+Epoch: 67 | Time: 148.5251186429996 | train_total: 0.5408 | train_ce: 0.5149 | train_l1: 0.0259 | train_l2: 0.0000 | train_acc: 0.8328 | test_total: 1.0357 | test_ce: 1.0066 | test_l1: 0.0291 | test_l2: 0.0000 | test_acc: 0.6776
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_067.pt
+Epoch: 68 | Time: 148.3389617009998 | train_total: 0.5682 | train_ce: 0.5411 | train_l1: 0.0271 | train_l2: 0.0000 | train_acc: 0.8198 | test_total: 1.0133 | test_ce: 0.9892 | test_l1: 0.0241 | test_l2: 0.0000 | test_acc: 0.6762
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_068.pt
+Epoch: 69 | Time: 148.50337928500085 | train_total: 0.5849 | train_ce: 0.5572 | train_l1: 0.0276 | train_l2: 0.0000 | train_acc: 0.8054 | test_total: 1.1083 | test_ce: 1.0823 | test_l1: 0.0260 | test_l2: 0.0000 | test_acc: 0.6422
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_069.pt
+Epoch: 70 | Time: 148.05855432499993 | train_total: 0.6202 | train_ce: 0.5951 | train_l1: 0.0251 | train_l2: 0.0000 | train_acc: 0.7903 | test_total: 1.1863 | test_ce: 1.1535 | test_l1: 0.0328 | test_l2: 0.0000 | test_acc: 0.6409
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_070.pt
+Epoch: 71 | Time: 148.23954744500043 | train_total: 0.6097 | train_ce: 0.5833 | train_l1: 0.0264 | train_l2: 0.0000 | train_acc: 0.7961 | test_total: 1.1217 | test_ce: 1.0988 | test_l1: 0.0229 | test_l2: 0.0000 | test_acc: 0.6519
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_071.pt
+Epoch: 72 | Time: 148.84099109700037 | train_total: 0.5850 | train_ce: 0.5592 | train_l1: 0.0258 | train_l2: 0.0000 | train_acc: 0.8059 | test_total: 1.1060 | test_ce: 1.0728 | test_l1: 0.0332 | test_l2: 0.0000 | test_acc: 0.6400
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_072.pt
+Epoch: 73 | Time: 148.40760333399885 | train_total: 0.5797 | train_ce: 0.5536 | train_l1: 0.0260 | train_l2: 0.0000 | train_acc: 0.8062 | test_total: 1.0409 | test_ce: 1.0174 | test_l1: 0.0236 | test_l2: 0.0000 | test_acc: 0.6533
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_073.pt
+Epoch: 74 | Time: 148.48168251300012 | train_total: 0.5134 | train_ce: 0.4884 | train_l1: 0.0250 | train_l2: 0.0000 | train_acc: 0.8417 | test_total: 1.0378 | test_ce: 1.0071 | test_l1: 0.0307 | test_l2: 0.0000 | test_acc: 0.6767
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_074.pt
+Epoch: 75 | Time: 148.35291299299934 | train_total: 0.4817 | train_ce: 0.4563 | train_l1: 0.0254 | train_l2: 0.0000 | train_acc: 0.8559 | test_total: 1.0222 | test_ce: 0.9976 | test_l1: 0.0246 | test_l2: 0.0000 | test_acc: 0.6793
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_075.pt
+Epoch: 76 | Time: 147.89350361200013 | train_total: 0.4601 | train_ce: 0.4339 | train_l1: 0.0262 | train_l2: 0.0000 | train_acc: 0.8595 | test_total: 0.9589 | test_ce: 0.9312 | test_l1: 0.0277 | test_l2: 0.0000 | test_acc: 0.6855
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_076.pt
+Epoch: 77 | Time: 149.42722280999988 | train_total: 0.4612 | train_ce: 0.4355 | train_l1: 0.0257 | train_l2: 0.0000 | train_acc: 0.8569 | test_total: 1.0334 | test_ce: 1.0048 | test_l1: 0.0286 | test_l2: 0.0000 | test_acc: 0.6696
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_077.pt
+Epoch: 78 | Time: 149.0690558339993 | train_total: 0.4541 | train_ce: 0.4282 | train_l1: 0.0259 | train_l2: 0.0000 | train_acc: 0.8635 | test_total: 1.0433 | test_ce: 1.0189 | test_l1: 0.0244 | test_l2: 0.0000 | test_acc: 0.6678
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_078.pt
+Epoch: 79 | Time: 148.5366982939995 | train_total: 0.4344 | train_ce: 0.4087 | train_l1: 0.0257 | train_l2: 0.0000 | train_acc: 0.8666 | test_total: 0.9547 | test_ce: 0.9254 | test_l1: 0.0293 | test_l2: 0.0000 | test_acc: 0.7032
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_079.pt
+Epoch: 80 | Time: 148.446876248001 | train_total: 0.4257 | train_ce: 0.4003 | train_l1: 0.0254 | train_l2: 0.0000 | train_acc: 0.8738 | test_total: 1.0939 | test_ce: 1.0665 | test_l1: 0.0274 | test_l2: 0.0000 | test_acc: 0.6701
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_080.pt
+Epoch: 81 | Time: 148.60349767499974 | train_total: 0.4382 | train_ce: 0.4119 | train_l1: 0.0263 | train_l2: 0.0000 | train_acc: 0.8711 | test_total: 0.9259 | test_ce: 0.8992 | test_l1: 0.0267 | test_l2: 0.0000 | test_acc: 0.7036
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_081.pt
+Epoch: 82 | Time: 148.24888605100023 | train_total: 0.4226 | train_ce: 0.3964 | train_l1: 0.0262 | train_l2: 0.0000 | train_acc: 0.8716 | test_total: 0.9437 | test_ce: 0.9158 | test_l1: 0.0279 | test_l2: 0.0000 | test_acc: 0.6983
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_082.pt
+Epoch: 83 | Time: 148.41973417500049 | train_total: 0.4181 | train_ce: 0.3917 | train_l1: 0.0263 | train_l2: 0.0000 | train_acc: 0.8753 | test_total: 0.9690 | test_ce: 0.9412 | test_l1: 0.0278 | test_l2: 0.0000 | test_acc: 0.6882
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_083.pt
+Epoch: 84 | Time: 148.40377960799924 | train_total: 0.4324 | train_ce: 0.4071 | train_l1: 0.0252 | train_l2: 0.0000 | train_acc: 0.8732 | test_total: 1.0204 | test_ce: 0.9933 | test_l1: 0.0270 | test_l2: 0.0000 | test_acc: 0.6904
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_084.pt
+Epoch: 85 | Time: 148.80787614699875 | train_total: 0.4092 | train_ce: 0.3833 | train_l1: 0.0259 | train_l2: 0.0000 | train_acc: 0.8803 | test_total: 1.0065 | test_ce: 0.9812 | test_l1: 0.0253 | test_l2: 0.0000 | test_acc: 0.6824
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_085.pt
+Epoch: 86 | Time: 148.56477533900033 | train_total: 0.3888 | train_ce: 0.3624 | train_l1: 0.0263 | train_l2: 0.0000 | train_acc: 0.8849 | test_total: 1.0385 | test_ce: 1.0129 | test_l1: 0.0256 | test_l2: 0.0000 | test_acc: 0.6877
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_086.pt
+Epoch: 87 | Time: 148.4498670789999 | train_total: 0.3753 | train_ce: 0.3495 | train_l1: 0.0258 | train_l2: 0.0000 | train_acc: 0.8939 | test_total: 0.9439 | test_ce: 0.9159 | test_l1: 0.0280 | test_l2: 0.0000 | test_acc: 0.7019
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_087.pt
+Epoch: 88 | Time: 149.0638428839993 | train_total: 0.3671 | train_ce: 0.3408 | train_l1: 0.0262 | train_l2: 0.0000 | train_acc: 0.8925 | test_total: 1.0385 | test_ce: 1.0101 | test_l1: 0.0285 | test_l2: 0.0000 | test_acc: 0.6895
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_088.pt
+Epoch: 89 | Time: 149.5994543179986 | train_total: 0.3625 | train_ce: 0.3363 | train_l1: 0.0262 | train_l2: 0.0000 | train_acc: 0.8959 | test_total: 1.0677 | test_ce: 1.0417 | test_l1: 0.0260 | test_l2: 0.0000 | test_acc: 0.6718
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_089.pt
+Epoch: 90 | Time: 148.5761875900007 | train_total: 0.3803 | train_ce: 0.3541 | train_l1: 0.0263 | train_l2: 0.0000 | train_acc: 0.8840 | test_total: 1.1105 | test_ce: 1.0805 | test_l1: 0.0300 | test_l2: 0.0000 | test_acc: 0.6820
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_090.pt
+Epoch: 91 | Time: 148.63436187799925 | train_total: 0.4208 | train_ce: 0.3939 | train_l1: 0.0269 | train_l2: 0.0000 | train_acc: 0.8670 | test_total: 1.0661 | test_ce: 1.0343 | test_l1: 0.0318 | test_l2: 0.0000 | test_acc: 0.6767
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_091.pt
+Epoch: 92 | Time: 148.60183968099955 | train_total: 0.4040 | train_ce: 0.3778 | train_l1: 0.0262 | train_l2: 0.0000 | train_acc: 0.8708 | test_total: 1.0701 | test_ce: 1.0433 | test_l1: 0.0268 | test_l2: 0.0000 | test_acc: 0.6860
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_092.pt
+Epoch: 93 | Time: 148.44610381999883 | train_total: 0.3747 | train_ce: 0.3486 | train_l1: 0.0261 | train_l2: 0.0000 | train_acc: 0.8828 | test_total: 0.9885 | test_ce: 0.9620 | test_l1: 0.0265 | test_l2: 0.0000 | test_acc: 0.6957
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_093.pt
+Epoch: 94 | Time: 148.57013012400057 | train_total: 0.3399 | train_ce: 0.3133 | train_l1: 0.0266 | train_l2: 0.0000 | train_acc: 0.9034 | test_total: 0.9478 | test_ce: 0.9215 | test_l1: 0.0263 | test_l2: 0.0000 | test_acc: 0.7054
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_094.pt
+Epoch: 95 | Time: 148.8337125830003 | train_total: 0.3325 | train_ce: 0.3063 | train_l1: 0.0262 | train_l2: 0.0000 | train_acc: 0.9063 | test_total: 1.0136 | test_ce: 0.9857 | test_l1: 0.0278 | test_l2: 0.0000 | test_acc: 0.6890
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_095.pt
+Epoch: 96 | Time: 148.67697352899995 | train_total: 0.3198 | train_ce: 0.2935 | train_l1: 0.0263 | train_l2: 0.0000 | train_acc: 0.9103 | test_total: 1.0208 | test_ce: 0.9918 | test_l1: 0.0290 | test_l2: 0.0000 | test_acc: 0.6988
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_096.pt
+Epoch: 97 | Time: 148.92814110200197 | train_total: 0.3244 | train_ce: 0.2988 | train_l1: 0.0257 | train_l2: 0.0000 | train_acc: 0.9074 | test_total: 0.9909 | test_ce: 0.9635 | test_l1: 0.0274 | test_l2: 0.0000 | test_acc: 0.6895
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_097.pt
+Epoch: 98 | Time: 148.48084471000038 | train_total: 0.3212 | train_ce: 0.2949 | train_l1: 0.0262 | train_l2: 0.0000 | train_acc: 0.9090 | test_total: 1.0550 | test_ce: 1.0275 | test_l1: 0.0275 | test_l2: 0.0000 | test_acc: 0.6913
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_098.pt
+Epoch: 99 | Time: 148.63013722399774 | train_total: 0.3431 | train_ce: 0.3162 | train_l1: 0.0268 | train_l2: 0.0000 | train_acc: 0.8995 | test_total: 1.0549 | test_ce: 1.0262 | test_l1: 0.0288 | test_l2: 0.0000 | test_acc: 0.6961
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_099.pt
+Epoch: 100 | Time: 148.9395348850012 | train_total: 0.3581 | train_ce: 0.3311 | train_l1: 0.0270 | train_l2: 0.0000 | train_acc: 0.8909 | test_total: 0.9448 | test_ce: 0.9168 | test_l1: 0.0280 | test_l2: 0.0000 | test_acc: 0.7032
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_100.pt
+Epoch: 101 | Time: 149.20220533000247 | train_total: 0.3301 | train_ce: 0.3038 | train_l1: 0.0263 | train_l2: 0.0000 | train_acc: 0.9015 | test_total: 1.0569 | test_ce: 1.0306 | test_l1: 0.0263 | test_l2: 0.0000 | test_acc: 0.6908
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_101.pt
+Epoch: 102 | Time: 149.27448608100167 | train_total: 0.3020 | train_ce: 0.2760 | train_l1: 0.0260 | train_l2: 0.0000 | train_acc: 0.9170 | test_total: 1.0132 | test_ce: 0.9845 | test_l1: 0.0287 | test_l2: 0.0000 | test_acc: 0.6899
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_102.pt
+Epoch: 103 | Time: 148.9856522629998 | train_total: 0.3317 | train_ce: 0.3050 | train_l1: 0.0267 | train_l2: 0.0000 | train_acc: 0.9028 | test_total: 0.9800 | test_ce: 0.9532 | test_l1: 0.0267 | test_l2: 0.0000 | test_acc: 0.7080
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_103.pt
+Epoch: 104 | Time: 148.95831816099962 | train_total: 0.2961 | train_ce: 0.2709 | train_l1: 0.0252 | train_l2: 0.0000 | train_acc: 0.9166 | test_total: 1.0164 | test_ce: 0.9891 | test_l1: 0.0272 | test_l2: 0.0000 | test_acc: 0.6957
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_104.pt
+Epoch: 105 | Time: 148.92889827199906 | train_total: 0.2946 | train_ce: 0.2689 | train_l1: 0.0256 | train_l2: 0.0000 | train_acc: 0.9192 | test_total: 0.9865 | test_ce: 0.9600 | test_l1: 0.0265 | test_l2: 0.0000 | test_acc: 0.7023
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_105.pt
+Epoch: 106 | Time: 148.78478606600038 | train_total: 0.2926 | train_ce: 0.2671 | train_l1: 0.0255 | train_l2: 0.0000 | train_acc: 0.9187 | test_total: 0.9841 | test_ce: 0.9588 | test_l1: 0.0252 | test_l2: 0.0000 | test_acc: 0.6988
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_106.pt
+Epoch: 107 | Time: 148.08516229900124 | train_total: 0.2957 | train_ce: 0.2709 | train_l1: 0.0248 | train_l2: 0.0000 | train_acc: 0.9190 | test_total: 0.9489 | test_ce: 0.9232 | test_l1: 0.0256 | test_l2: 0.0000 | test_acc: 0.7067
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_107.pt
+Epoch: 108 | Time: 147.79451309499927 | train_total: 0.3041 | train_ce: 0.2781 | train_l1: 0.0260 | train_l2: 0.0000 | train_acc: 0.9101 | test_total: 0.9398 | test_ce: 0.9118 | test_l1: 0.0280 | test_l2: 0.0000 | test_acc: 0.7129
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_108.pt
+Epoch: 109 | Time: 148.0773651820018 | train_total: 0.2929 | train_ce: 0.2666 | train_l1: 0.0264 | train_l2: 0.0000 | train_acc: 0.9159 | test_total: 1.0064 | test_ce: 0.9805 | test_l1: 0.0259 | test_l2: 0.0000 | test_acc: 0.7045
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_109.pt
+Epoch: 110 | Time: 148.60132142099974 | train_total: 0.2671 | train_ce: 0.2426 | train_l1: 0.0246 | train_l2: 0.0000 | train_acc: 0.9275 | test_total: 1.0396 | test_ce: 1.0139 | test_l1: 0.0257 | test_l2: 0.0000 | test_acc: 0.6996
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_110.pt
+Epoch: 111 | Time: 148.19469587300046 | train_total: 0.2542 | train_ce: 0.2296 | train_l1: 0.0246 | train_l2: 0.0000 | train_acc: 0.9346 | test_total: 1.0156 | test_ce: 0.9901 | test_l1: 0.0255 | test_l2: 0.0000 | test_acc: 0.7023
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_111.pt
+Epoch: 112 | Time: 148.5105172750009 | train_total: 0.2535 | train_ce: 0.2285 | train_l1: 0.0250 | train_l2: 0.0000 | train_acc: 0.9328 | test_total: 1.0995 | test_ce: 1.0735 | test_l1: 0.0260 | test_l2: 0.0000 | test_acc: 0.6829
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_112.pt
+Epoch: 113 | Time: 148.45945142900018 | train_total: 0.2684 | train_ce: 0.2433 | train_l1: 0.0251 | train_l2: 0.0000 | train_acc: 0.9245 | test_total: 1.0806 | test_ce: 1.0560 | test_l1: 0.0246 | test_l2: 0.0000 | test_acc: 0.6846
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_113.pt
+Epoch: 114 | Time: 148.74824720700053 | train_total: 0.2766 | train_ce: 0.2514 | train_l1: 0.0251 | train_l2: 0.0000 | train_acc: 0.9218 | test_total: 0.9913 | test_ce: 0.9644 | test_l1: 0.0270 | test_l2: 0.0000 | test_acc: 0.7054
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_114.pt
+Epoch: 115 | Time: 148.63408788300148 | train_total: 0.2490 | train_ce: 0.2236 | train_l1: 0.0254 | train_l2: 0.0000 | train_acc: 0.9305 | test_total: 1.0403 | test_ce: 1.0141 | test_l1: 0.0262 | test_l2: 0.0000 | test_acc: 0.6966
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_115.pt
+Epoch: 116 | Time: 148.61467069600258 | train_total: 0.2545 | train_ce: 0.2289 | train_l1: 0.0256 | train_l2: 0.0000 | train_acc: 0.9299 | test_total: 0.9758 | test_ce: 0.9491 | test_l1: 0.0266 | test_l2: 0.0000 | test_acc: 0.7094
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_116.pt
+Epoch: 117 | Time: 148.52885403099936 | train_total: 0.2436 | train_ce: 0.2190 | train_l1: 0.0246 | train_l2: 0.0000 | train_acc: 0.9377 | test_total: 1.0530 | test_ce: 1.0276 | test_l1: 0.0254 | test_l2: 0.0000 | test_acc: 0.7005
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_117.pt
+Epoch: 118 | Time: 148.47993665600006 | train_total: 0.2520 | train_ce: 0.2275 | train_l1: 0.0244 | train_l2: 0.0000 | train_acc: 0.9322 | test_total: 1.0569 | test_ce: 1.0310 | test_l1: 0.0258 | test_l2: 0.0000 | test_acc: 0.6988
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_118.pt
+Epoch: 119 | Time: 148.45382914899892 | train_total: 0.2465 | train_ce: 0.2224 | train_l1: 0.0242 | train_l2: 0.0000 | train_acc: 0.9305 | test_total: 1.0113 | test_ce: 0.9846 | test_l1: 0.0267 | test_l2: 0.0000 | test_acc: 0.7032
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_119.pt
+Epoch: 120 | Time: 148.91102395399867 | train_total: 0.2357 | train_ce: 0.2113 | train_l1: 0.0244 | train_l2: 0.0000 | train_acc: 0.9360 | test_total: 1.1200 | test_ce: 1.0952 | test_l1: 0.0248 | test_l2: 0.0000 | test_acc: 0.6811
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_120.pt
+Epoch: 121 | Time: 148.90973478399974 | train_total: 0.2284 | train_ce: 0.2042 | train_l1: 0.0242 | train_l2: 0.0000 | train_acc: 0.9421 | test_total: 1.0980 | test_ce: 1.0700 | test_l1: 0.0280 | test_l2: 0.0000 | test_acc: 0.6974
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_121.pt
+Epoch: 122 | Time: 148.81991695100078 | train_total: 0.2209 | train_ce: 0.1966 | train_l1: 0.0243 | train_l2: 0.0000 | train_acc: 0.9437 | test_total: 1.0677 | test_ce: 1.0412 | test_l1: 0.0265 | test_l2: 0.0000 | test_acc: 0.6943
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_122.pt
+Epoch: 123 | Time: 148.9398554569998 | train_total: 0.2253 | train_ce: 0.2011 | train_l1: 0.0242 | train_l2: 0.0000 | train_acc: 0.9423 | test_total: 1.1070 | test_ce: 1.0805 | test_l1: 0.0265 | test_l2: 0.0000 | test_acc: 0.6882
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_123.pt
+Epoch: 124 | Time: 149.11806945699936 | train_total: 0.2377 | train_ce: 0.2122 | train_l1: 0.0256 | train_l2: 0.0000 | train_acc: 0.9328 | test_total: 1.0401 | test_ce: 1.0126 | test_l1: 0.0275 | test_l2: 0.0000 | test_acc: 0.7036
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_124.pt
+Epoch: 125 | Time: 149.61184902699824 | train_total: 0.2310 | train_ce: 0.2065 | train_l1: 0.0245 | train_l2: 0.0000 | train_acc: 0.9369 | test_total: 1.0399 | test_ce: 1.0119 | test_l1: 0.0280 | test_l2: 0.0000 | test_acc: 0.6979
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_125.pt
+Epoch: 126 | Time: 148.57731353499912 | train_total: 0.2143 | train_ce: 0.1895 | train_l1: 0.0248 | train_l2: 0.0000 | train_acc: 0.9457 | test_total: 0.9758 | test_ce: 0.9492 | test_l1: 0.0266 | test_l2: 0.0000 | test_acc: 0.7107
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_126.pt
+Epoch: 127 | Time: 148.85736816799908 | train_total: 0.2106 | train_ce: 0.1865 | train_l1: 0.0241 | train_l2: 0.0000 | train_acc: 0.9467 | test_total: 1.0359 | test_ce: 1.0093 | test_l1: 0.0266 | test_l2: 0.0000 | test_acc: 0.7023
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_127.pt
+Epoch: 128 | Time: 149.44582461699974 | train_total: 0.2055 | train_ce: 0.1815 | train_l1: 0.0240 | train_l2: 0.0000 | train_acc: 0.9475 | test_total: 1.1076 | test_ce: 1.0834 | test_l1: 0.0242 | test_l2: 0.0000 | test_acc: 0.6895
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_128.pt
+Epoch: 129 | Time: 148.9658702859997 | train_total: 0.2028 | train_ce: 0.1782 | train_l1: 0.0246 | train_l2: 0.0000 | train_acc: 0.9524 | test_total: 0.9974 | test_ce: 0.9716 | test_l1: 0.0258 | test_l2: 0.0000 | test_acc: 0.7142
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_129.pt
+Epoch: 130 | Time: 148.600846516998 | train_total: 0.2240 | train_ce: 0.1999 | train_l1: 0.0242 | train_l2: 0.0000 | train_acc: 0.9415 | test_total: 1.1478 | test_ce: 1.1235 | test_l1: 0.0243 | test_l2: 0.0000 | test_acc: 0.6860
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_130.pt
+Epoch: 131 | Time: 149.14153856399935 | train_total: 0.2210 | train_ce: 0.1976 | train_l1: 0.0234 | train_l2: 0.0000 | train_acc: 0.9404 | test_total: 1.1214 | test_ce: 1.0975 | test_l1: 0.0239 | test_l2: 0.0000 | test_acc: 0.6855
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_131.pt
+Epoch: 132 | Time: 148.7124488499976 | train_total: 0.2182 | train_ce: 0.1942 | train_l1: 0.0240 | train_l2: 0.0000 | train_acc: 0.9451 | test_total: 1.0870 | test_ce: 1.0617 | test_l1: 0.0253 | test_l2: 0.0000 | test_acc: 0.6961
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_132.pt
+Epoch: 133 | Time: 149.06185042699872 | train_total: 0.2030 | train_ce: 0.1790 | train_l1: 0.0240 | train_l2: 0.0000 | train_acc: 0.9473 | test_total: 1.1716 | test_ce: 1.1463 | test_l1: 0.0253 | test_l2: 0.0000 | test_acc: 0.6957
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_133.pt
+Epoch: 134 | Time: 149.24526463700022 | train_total: 0.2091 | train_ce: 0.1850 | train_l1: 0.0241 | train_l2: 0.0000 | train_acc: 0.9474 | test_total: 1.1255 | test_ce: 1.1008 | test_l1: 0.0247 | test_l2: 0.0000 | test_acc: 0.6992
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_134.pt
+Epoch: 135 | Time: 148.87369984500037 | train_total: 0.1842 | train_ce: 0.1604 | train_l1: 0.0238 | train_l2: 0.0000 | train_acc: 0.9567 | test_total: 1.0547 | test_ce: 1.0305 | test_l1: 0.0243 | test_l2: 0.0000 | test_acc: 0.7072
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_135.pt
+Epoch: 136 | Time: 149.00416844999927 | train_total: 0.1914 | train_ce: 0.1677 | train_l1: 0.0237 | train_l2: 0.0000 | train_acc: 0.9533 | test_total: 1.1332 | test_ce: 1.1090 | test_l1: 0.0242 | test_l2: 0.0000 | test_acc: 0.6864
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_136.pt
+Epoch: 137 | Time: 149.0179030670006 | train_total: 0.1892 | train_ce: 0.1648 | train_l1: 0.0244 | train_l2: 0.0000 | train_acc: 0.9552 | test_total: 1.1416 | test_ce: 1.1165 | test_l1: 0.0251 | test_l2: 0.0000 | test_acc: 0.6864
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_137.pt
+Epoch: 138 | Time: 149.12481053900046 | train_total: 0.1877 | train_ce: 0.1638 | train_l1: 0.0239 | train_l2: 0.0000 | train_acc: 0.9551 | test_total: 1.1139 | test_ce: 1.0871 | test_l1: 0.0268 | test_l2: 0.0000 | test_acc: 0.6974
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_138.pt
+Epoch: 139 | Time: 149.0835570929994 | train_total: 0.1937 | train_ce: 0.1694 | train_l1: 0.0243 | train_l2: 0.0000 | train_acc: 0.9544 | test_total: 1.0997 | test_ce: 1.0742 | test_l1: 0.0255 | test_l2: 0.0000 | test_acc: 0.6988
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_139.pt
+Epoch: 140 | Time: 149.1854307040012 | train_total: 0.1802 | train_ce: 0.1570 | train_l1: 0.0232 | train_l2: 0.0000 | train_acc: 0.9572 | test_total: 1.1250 | test_ce: 1.1014 | test_l1: 0.0236 | test_l2: 0.0000 | test_acc: 0.7001
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_140.pt
+Epoch: 141 | Time: 149.048071661 | train_total: 0.1697 | train_ce: 0.1463 | train_l1: 0.0234 | train_l2: 0.0000 | train_acc: 0.9627 | test_total: 1.1870 | test_ce: 1.1637 | test_l1: 0.0233 | test_l2: 0.0000 | test_acc: 0.6890
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_141.pt
+Epoch: 142 | Time: 149.31377094900017 | train_total: 0.1837 | train_ce: 0.1597 | train_l1: 0.0240 | train_l2: 0.0000 | train_acc: 0.9546 | test_total: 1.1147 | test_ce: 1.0898 | test_l1: 0.0248 | test_l2: 0.0000 | test_acc: 0.6974
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_142.pt
+Epoch: 143 | Time: 148.52142842100147 | train_total: 0.1658 | train_ce: 0.1421 | train_l1: 0.0236 | train_l2: 0.0000 | train_acc: 0.9660 | test_total: 1.1001 | test_ce: 1.0736 | test_l1: 0.0266 | test_l2: 0.0000 | test_acc: 0.6983
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_143.pt
+Epoch: 144 | Time: 148.49272637499962 | train_total: 0.1784 | train_ce: 0.1545 | train_l1: 0.0239 | train_l2: 0.0000 | train_acc: 0.9579 | test_total: 1.0900 | test_ce: 1.0645 | test_l1: 0.0255 | test_l2: 0.0000 | test_acc: 0.7010
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_144.pt
+Epoch: 145 | Time: 148.8062217730003 | train_total: 0.2064 | train_ce: 0.1832 | train_l1: 0.0232 | train_l2: 0.0000 | train_acc: 0.9415 | test_total: 1.0716 | test_ce: 1.0477 | test_l1: 0.0239 | test_l2: 0.0000 | test_acc: 0.7129
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_145.pt
+Epoch: 146 | Time: 149.6029386980008 | train_total: 0.1609 | train_ce: 0.1387 | train_l1: 0.0222 | train_l2: 0.0000 | train_acc: 0.9632 | test_total: 1.1197 | test_ce: 1.0962 | test_l1: 0.0235 | test_l2: 0.0000 | test_acc: 0.6939
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_146.pt
+Epoch: 147 | Time: 148.39640850100113 | train_total: 0.1576 | train_ce: 0.1345 | train_l1: 0.0230 | train_l2: 0.0000 | train_acc: 0.9635 | test_total: 1.0624 | test_ce: 1.0378 | test_l1: 0.0246 | test_l2: 0.0000 | test_acc: 0.7129
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_147.pt
+Epoch: 148 | Time: 148.8041348270017 | train_total: 0.1561 | train_ce: 0.1331 | train_l1: 0.0230 | train_l2: 0.0000 | train_acc: 0.9680 | test_total: 1.1254 | test_ce: 1.1006 | test_l1: 0.0248 | test_l2: 0.0000 | test_acc: 0.7019
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_148.pt
+Epoch: 149 | Time: 148.23455495600138 | train_total: 0.1566 | train_ce: 0.1331 | train_l1: 0.0234 | train_l2: 0.0000 | train_acc: 0.9647 | test_total: 1.1410 | test_ce: 1.1171 | test_l1: 0.0239 | test_l2: 0.0000 | test_acc: 0.7019
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_149.pt
+Epoch: 150 | Time: 148.60522258399942 | train_total: 0.1618 | train_ce: 0.1394 | train_l1: 0.0224 | train_l2: 0.0000 | train_acc: 0.9635 | test_total: 1.0617 | test_ce: 1.0366 | test_l1: 0.0251 | test_l2: 0.0000 | test_acc: 0.7195
+[INFO] Saving model to: models/recurrentSNN_seed3/recurrentSNN_epoch_150.pt

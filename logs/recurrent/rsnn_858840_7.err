@@ -1,0 +1,79 @@
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_vx=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for this output (/p/software/jusuf/lmod/8.7.64/init/bash)
+Shell debugging restarted
++ unset __lmod_vx
++ module purge
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) Stages/2026
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ module load Stages/2026 GCC Python
++ '[' -z '' ']'
++ case "$-" in
++ __lmod_sh_dbg=x
++ '[' -n x ']'
++ set +x
+Shell debugging temporarily silenced: export LMOD_SH_DBG_ON=1 for Lmod's output
+Shell debugging restarted
++ unset __lmod_sh_dbg
++ return 0
++ cd /p/project1/ebrains-0000010/shd_snn
++ source .snn/bin/activate
+++ deactivate nondestructive
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
+++ '[' -n '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ case "$(uname)" in
++++ uname
+++ export VIRTUAL_ENV=/p/project1/ebrains-0000010/shd_snn/.snn
+++ VIRTUAL_ENV=/p/project1/ebrains-0000010/shd_snn/.snn
+++ _OLD_VIRTUAL_PATH=/p/software/default/stages/2026/software/Python/3.13.5-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/OpenSSL/3/bin:/p/software/default/stages/2026/software/XZ/5.8.1-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/SQLite/3.50.1-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/Tcl/9.0.1-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/ncurses/6.5-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/bzip2/1.0.8-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/binutils/2.44-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/GCCcore/14.3.0/bin:/p/project1/ebrains-0000010/shd_snn/.snn/bin:/p/home/jusers/kamm2/jusuf/.vscode-server/cli/servers/Stable-df53daabb18cd157bdb08c7f01c34df936cf12f4/server/bin/remote-cli:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/jsc/bin:/usr/local/jsc/bin:/opt/parastation/bin:/p/software/default/bin:/opt/jsc/bin:/usr/local/jsc/bin:/opt/parastation/bin:/p/software/default/bin:/opt/jsc/bin:/usr/local/jsc/bin:/opt/parastation/bin:/p/software/default/bin
+++ PATH=/p/project1/ebrains-0000010/shd_snn/.snn/bin:/p/software/default/stages/2026/software/Python/3.13.5-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/OpenSSL/3/bin:/p/software/default/stages/2026/software/XZ/5.8.1-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/SQLite/3.50.1-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/Tcl/9.0.1-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/ncurses/6.5-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/bzip2/1.0.8-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/binutils/2.44-GCCcore-14.3.0/bin:/p/software/default/stages/2026/software/GCCcore/14.3.0/bin:/p/project1/ebrains-0000010/shd_snn/.snn/bin:/p/home/jusers/kamm2/jusuf/.vscode-server/cli/servers/Stable-df53daabb18cd157bdb08c7f01c34df936cf12f4/server/bin/remote-cli:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/jsc/bin:/usr/local/jsc/bin:/opt/parastation/bin:/p/software/default/bin:/opt/jsc/bin:/usr/local/jsc/bin:/opt/parastation/bin:/p/software/default/bin:/opt/jsc/bin:/usr/local/jsc/bin:/opt/parastation/bin:/p/software/default/bin
+++ export PATH
+++ VIRTUAL_ENV_PROMPT=.snn
+++ export VIRTUAL_ENV_PROMPT
+++ '[' -n '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ PS1='(.snn) '
+++ export PS1
+++ hash -r
++ export SNN_TEST_RUN=0
++ SNN_TEST_RUN=0
++ export SNN_NUM_EPOCHS=150
++ SNN_NUM_EPOCHS=150
++ export SNN_SEED=7
++ SNN_SEED=7
++ export SNN_ARCH=recurrent
++ SNN_ARCH=recurrent
++ export SNN_MODEL_NAME=recurrentSNN
++ SNN_MODEL_NAME=recurrentSNN
++ export SNN_IN_NEURONS=700
++ SNN_IN_NEURONS=700
++ export SNN_HIDDEN_UNITS=128
++ SNN_HIDDEN_UNITS=128
++ export SNN_TAU_SYN_MS=10
++ SNN_TAU_SYN_MS=10
++ export SNN_TAU_MEM_MS=20
++ SNN_TAU_MEM_MS=20
++ export SNN_TRANSFORM=0
++ SNN_TRANSFORM=0
++ echo 'Task 7: arch=recurrent seed=7'
++ srun python -m snn_shd.train
