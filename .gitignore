@@ -4,8 +4,6 @@
 .vscode/
 # ignore testing scripts for now
 testing/ 
-# ignore notebooks for now 
-notebooks/
 # ignore models for now 
 models/
 # ignore tensorboard logdirs for now 
@@ -14,7 +12,10 @@ runs/
 *.pyc
 # ignore current cluster job logs 
 logs/rest
+logs/rsnn_be
 # ignore MacOS configuration from tracking 
 snn_shd/local_config.py 
+# ignore py-spinnaker2 repo 
+py-spinnaker2
 # ignore DS files 
 *.DS_Store
