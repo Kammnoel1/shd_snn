@@ -6,9 +6,15 @@ import torch
 # Shared hyper parameters across every run.
 OUT_NEURONS = 20  # number of output classes
 RAW_IN_NEURONS = 700  # number of cochlea channels in the SHD files
-DATA_DIR = Path(
-    "/p/project1/ebrains-0000010/hdspikes/"
-)  # Path object pointing to the directory where training and test set are stored
+
+_CANDIDATES = [
+    Path("/p/project1/ebrains-0000010/hdspikes/"),  # cluster
+    Path("/Users/noelkamm/data/hdspikes"),  # local Mac
+]  # Path object pointing to the directory where training and test set are stored
+
+DATA_DIR = next((p for p in _CANDIDATES if p.exists()), None)
+if DATA_DIR is None:
+    raise FileNotFoundError("No known DATA_DIR found on this machine.")
 TRAIN_FILENAME = "shd_train.h5"
 TEST_FILENAME = "shd_test.h5"
 # model parameters from Table II of SHD paper
