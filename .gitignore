@@ -10,6 +10,8 @@ models/
 runs/
 # ignore compiled bytecode files 
 *.pyc
+# ignore notebooks 
+notebooks/
 # ignore current cluster job logs 
 logs/rest
 logs/rsnn_be
